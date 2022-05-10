@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Kerjamin</string>
+    <string name="title">Menjamin Pekerjaan Rumah Anda</string>
+    <string name="welcome_message">Nikmati pelayanan jasa dari Kerjamin</string>
+    <string name="welcome">Selamat Datang!</string>
+    <string name="account">Belum punya akun?</string>
+    <string name="register">Daftarkan akun Anda dengan mengisi form berikut</string>
+
+    <!--    Form-->
+    <string name="email">E-Mail</string>
+    <string name="password">Password</string>
+    <string name="nik">NIK</string>
+    <string name="name">Nama Lengkap</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="born_date">Tanggal Lahir</string>
+    <string name="phone">No. Telepon</string>
+
+    <!--    Button-->
+    <string name="login">Masuk</string>
+    <string name="register_button">Daftar Akun</string>
+
+
 </resources>
