@@ -19,5 +19,46 @@
     <string name="login">Masuk</string>
     <string name="register_button">Daftar Akun</string>
 
+    <!--    Bottom Navigation-->
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_order">Pesanan</string>
+    <string name="title_help">Bantuan</string>
+    <string name="title_profile">Akun</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    card freelance-->
+    <string name="name_free">Nama Freelancer</string>
+    <string name="distant_free">Jarak</string>
+    <string name="specialist">Keahlian Freelancer</string>
+    <string name="rating">Rating</string>
+
+    <!--    card order-->
+    <string name="category">Kategori Jasa</string>
+    <string name="status">Status</string>
+    <string name="date">Tanggal</string>
+
+    <!--    Home-->
+    <string name="hai">Hai,</string>
+    <string name="home">Silahkan pilih kategori jasa yang anda butuhkan</string>
+    <string name="service">Servis Elektronik</string>
+    <string name="cleaner">Jasa Kebersihan</string>
+    <string name="builder">Tukang Bangunan</string>
+    <string name="arsitec">Arsitek Bangunan</string>
+    <string name="news">Berita</string>
+    <string name="news_title">Judul Berita</string>
+
+    <!--    Help-->
+    <string name="whatsapp">WhatsApp</string>
+    <string name="phone_help">Telepon</string>
+
+    <!--    List Freelancer-->
+    <string name="add_loc">Tambahkan lokasi anda</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="todo">TODO</string>
+
+<!--    Maps Freelancer-->
+    <string name="list">Daftar Freelancer</string>
 
 </resources>
