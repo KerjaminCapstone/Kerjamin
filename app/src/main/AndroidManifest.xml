@@ -9,7 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kerjamin">
-
+        <activity
+            android:name=".data.ui.DetailClientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".data.ui.ReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".data.ui.DetailJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".data.ui.JobdeskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".data.ui.DetailFreelancerActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

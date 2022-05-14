@@ -32,7 +32,7 @@ class ListFreelancerActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.maps -> {
-                val mapIntent = Intent(this, MapsActivity::class.java)
+                val mapIntent = Intent(this, DetailFreelancerActivity::class.java)
                 startActivity(mapIntent)
             }
         }

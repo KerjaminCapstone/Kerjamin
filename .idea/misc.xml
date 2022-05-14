@@ -5,16 +5,26 @@
       <map>
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/button.xml" value="0.131" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/button2.xml" value="0.131" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.14" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/ic_electrical_services.xml" value="0.1525" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/ic_email.xml" value="0.131" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/ic_rating.xml" value="0.14" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/ic_star_gold.xml" value="0.14" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/ic_star_grey.xml" value="0.14" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/rating_toogle.xml" value="0.14" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/rounded.xml" value="0.131" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/drawable/stroke.xml" value="0.131" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_detail_client.xml" value="0.1796875" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_detail_freelancer.xml" value="0.22" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_detail_job.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_jobdesk.xml" value="0.22" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_list_freelancer.xml" value="0.1796875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_maps.xml" value="0.1796875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_review.xml" value="0.1796875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/activity_splash_screen.xml" value="0.1796875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/fragment_dashboard.xml" value="0.1796875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Kerjamin/app/src/main/res/layout/fragment_help.xml" value="0.22" />
