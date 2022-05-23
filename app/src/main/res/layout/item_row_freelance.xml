@@ -28,7 +28,7 @@
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintVertical_bias="1.0"
-            tools:src="@tools:sample/avatars">
+            tools:src="@drawable/name">
 
         </androidx.appcompat.widget.AppCompatImageView>
 

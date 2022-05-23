@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.ui.DetailFreelancerActivity"
+    tools:context=".data.ui.detail.DetailFreelancerActivity"
     android:theme="@style/Theme.Kerjamin">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_user"
-        android:layout_width="135dp"
+        android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@mipmap/ic_launcher_round"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_username"
@@ -157,91 +157,16 @@
             android:text="@string/gender"/>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        style="@style/cardView"
-        android:id="@+id/layout_phone"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/grey_100"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_gender">
-
-        <TextView
-            android:id="@+id/phone"
-            android:textSize="11sp"
-            style="@style/TextContent.Small.Grey"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/phone" />
-
-        <TextView
-            android:id="@+id/tv_phone"
-            style="@style/TextContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="18dp"
-            android:text="@string/phone"/>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        style="@style/cardView"
-        android:id="@+id/layout_budget"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/grey_100"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_phone">
-
-        <TextView
-            android:id="@+id/budget"
-            android:textSize="11sp"
-            style="@style/TextContent.Small.Grey"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/budget" />
-
-        <TextView
-            android:id="@+id/tv_budget"
-            style="@style/TextContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="18dp"
-            android:text="@string/budget" />
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/btn_chat"
-        style="@style/ButtonSecondary"
-        android:layout_marginTop="32dp"
-        android:drawableEnd="@drawable/ic_chat"
-        android:text="@string/chat"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextContent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_budget" />
-
     <Button
         android:id="@+id/btn_order"
-        style="@style/Button"
+        style="@style/ButtonPrimary"
         android:layout_marginTop="16dp"
-        android:text="@string/order"
+        android:text="@string/form"
         android:textAppearance="@style/TextContent"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_chat" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_gender" />
 
     <ProgressBar
         android:id="@+id/progressBar"

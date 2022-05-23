@@ -1,26 +1,30 @@
-package com.capstone.project.kerjamin.data.ui
+package com.capstone.project.kerjamin.data.ui.list
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.databinding.ActivityListFreelancerBinding
-import com.capstone.project.kerjamin.databinding.ActivityLoginBinding
+import com.capstone.project.kerjamin.data.ui.detail.DetailFreelancerActivity
+import com.capstone.project.kerjamin.databinding.ActivityFreelancerArsitecBinding
 
-class ListFreelancerActivity : AppCompatActivity() {
+class FreelancerArsitecActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityListFreelancerBinding
+    private lateinit var binding: ActivityFreelancerArsitecBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityListFreelancerBinding.inflate(layoutInflater)
+        binding = ActivityFreelancerArsitecBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Daftar Freelancer"
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Arsitek Bangunan"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

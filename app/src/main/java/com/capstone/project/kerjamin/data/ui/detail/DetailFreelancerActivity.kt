@@ -1,8 +1,9 @@
-package com.capstone.project.kerjamin.data.ui
+package com.capstone.project.kerjamin.data.ui.detail
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.capstone.project.kerjamin.data.ui.ProblemActivity
 import com.capstone.project.kerjamin.databinding.ActivityDetailFreelancerBinding
 
 class DetailFreelancerActivity : AppCompatActivity() {
@@ -15,11 +16,16 @@ class DetailFreelancerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.title = "Detail Freelancer"
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.btnOrder.setOnClickListener {
-            val view = Intent(this@DetailFreelancerActivity, JobdeskActivity::class.java)
+            val view = Intent(this@DetailFreelancerActivity, ProblemActivity::class.java)
             startActivity(view)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

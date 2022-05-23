@@ -27,9 +27,17 @@
     <string name="chat">Chat dengan Freelancer</string>
     <string name="order">Pesan</string>
     <string name="login">Masuk</string>
+    <string name="logout">Keluar</string>
     <string name="register_button">Daftar Akun</string>
     <string name="transfer">Transfer</string>
-    <string name="send">Kirim Review</string>
+    <string name="send_review">Kirim Review</string>
+    <string name="send">Kirim</string>
+    <string name="refresdh">Refresh</string>
+    <string name="form">Isi Form Keluhan</string>
+    <string name="confirm_order">Konfirmasi Pesanan</string>
+    <string name="confirm_finish">Konfirmasi Selesai</string>
+    <string name="cancel">Batalkan</string>
+    <string name="pay">Bayar</string>
 
     <!--    Bottom Navigation-->
     <string name="title_activity_menu">MenuActivity</string>
@@ -44,7 +52,6 @@
 
     <!--    card order-->
     <string name="category">Kategori Jasa</string>
-    <string name="status">Status</string>
     <string name="date">Tanggal</string>
 
     <!--    Home-->
@@ -70,25 +77,46 @@
     <string name="list">Daftar Freelancer</string>
 
     <!--    Job Desk-->
-    <string name="desc">*Pengguna akan dikenakan fee sebesar 2% dari harga yang telah disepakati</string>
-    <string name="desc1">Silahkan masukan detail pekerjaan yang harus dilakukan oleh Freelancer</string>
-    <string name="edt_desc1">Daftar Pekerjaan</string>
+    <string name="desc">*Untuk total, pengguna dikenakan fee sebesar 2% dari harga yang tertera</string>
+    <string name="desc1">Jelaskan keluhan atau permasalahan anda yang ingin diselesaikan oleh freelancer</string>
+    <string name="edt_desc1">Keluhan</string>
     <string name="desc2">Silahkan masukan harga yang telah disepakati</string>
     <string name="edt_desc2">Harga*</string>
-    <string name="start">Mulai Pekerjaan</string>
+    <string name="start">Pesan</string>
 
     <!--    Detail Job-->
-    <string name="desc3">Detail pekerjaan :</string>
-    <string name="tv_desc3">Detail pekerjaan</string>
-    <string name="cost">Harga yang disepakati</string>
+    <string name="status">Status</string>
+    <string name="wait">Menunggu konfirmasi</string>
+    <string name="accept">Diterima freelancer</string>
+    <string name="on_going">Dalam Proses</string>
+    <string name="finish">Selesai</string>
+    <string name="problem">Keluhan :</string>
+    <string name="tv_problem">Keluhan anda</string>
+    <string name="start_cost">Perkiraan harga</string>
+    <string name="final_cost">Harga yang disepakati</string>
+    <string name="list_job">Detail Pekerjaan</string>
     <string name="total">Total</string>
     <string name="dummy">0000000</string>
+    <string name="detail_job">Berikut ini detail pekerjaan yang akan dilakukan oleh freelancer</string>
 
     <!--    Review-->
     <string name="desc4">Berikan penilaian anda terhadap kinerja Freelancer</string>
-    <string name="review">Masukan review</string>
+    <string name="review">Berikan komentar anda</string>
+    <string name="tv_review">Komentar anda</string>
 
     <!--    Profile-->
     <string name="info">Informasi Akun</string>
     <string name="term">Ketentuan Layanan</string>
+
+
+    <!--    Payment-->
+    <string name="tv_total">Total Tagihan</string>
+    <string-array name="payment">
+        <item>Pilih metode pembayaran</item>
+        <item>BCA</item>
+        <item>Mandiri</item>
+        <item>OVO</item>
+        <item>Gopay</item>
+        <item>Shopeepay</item>
+    </string-array>
 </resources>

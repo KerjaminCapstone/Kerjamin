@@ -18,12 +18,10 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             val view = Intent(this@LoginActivity, MenuActivity::class.java)
             startActivity(view)
-            finish()
         }
         binding.btnRegister.setOnClickListener {
             val view = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(view)
-            finish()
         }
     }
 }

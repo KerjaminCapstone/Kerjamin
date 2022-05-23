@@ -1,4 +1,4 @@
-package com.capstone.project.kerjamin.data.ui
+package com.capstone.project.kerjamin.data.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +13,12 @@ class DetailClientActivity : AppCompatActivity() {
         binding = ActivityDetailClientBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Informasi Akun"
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

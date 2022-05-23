@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.ui.ListFreelancerActivity">
+    tools:context=".data.ui.list.FreelancerArsitecActivity">
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_loc"
@@ -67,4 +67,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="gone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

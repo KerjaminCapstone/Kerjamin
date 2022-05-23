@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.capstone.project.kerjamin.R
+import com.capstone.project.kerjamin.data.ui.list.FreelancerServiceActivity
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -32,7 +33,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         supportActionBar?.hide()
 
         binding.btnList.setOnClickListener {
-            val view = Intent(this@MapsActivity, ListFreelancerActivity::class.java)
+            val view = Intent(this@MapsActivity, FreelancerServiceActivity::class.java)
             startActivity(view)
         }
     }

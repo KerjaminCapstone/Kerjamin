@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.capstone.project.kerjamin.data.ui.ListFreelancerActivity
+import com.capstone.project.kerjamin.data.ui.list.FreelancerArsitecActivity
+import com.capstone.project.kerjamin.data.ui.list.FreelancerBuilderActivity
+import com.capstone.project.kerjamin.data.ui.list.FreelancerCleanerActivity
+import com.capstone.project.kerjamin.data.ui.list.FreelancerServiceActivity
 import com.capstone.project.kerjamin.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -33,9 +36,23 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnService.setOnClickListener {
-            val intent = Intent(getActivity(), ListFreelancerActivity::class.java)
+            val intent = Intent(getActivity(), FreelancerServiceActivity::class.java)
             getActivity()?.startActivity(intent)
+        }
 
+        binding.btnCleaner.setOnClickListener {
+            val intent = Intent(getActivity(), FreelancerCleanerActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        binding.btnBuilder.setOnClickListener {
+            val intent = Intent(getActivity(), FreelancerBuilderActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        binding.btnArsitec.setOnClickListener {
+            val intent = Intent(getActivity(), FreelancerArsitecActivity::class.java)
+            getActivity()?.startActivity(intent)
         }
     }
 }

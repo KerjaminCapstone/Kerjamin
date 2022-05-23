@@ -12,5 +12,6 @@
     <color name="grey_light">#A1A1A1</color>
     <color name="black_light">#191919</color>
     <color name="grey_100">#F4F4F4</color>
+    <color name="red">#DC1D1D</color>
 
 </resources>
