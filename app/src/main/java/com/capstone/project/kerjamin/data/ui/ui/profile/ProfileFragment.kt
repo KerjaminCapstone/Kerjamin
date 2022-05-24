@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.capstone.project.kerjamin.data.ui.detail.DetailClientActivity
-import com.capstone.project.kerjamin.data.ui.LoginActivity
+import com.capstone.project.kerjamin.data.ui.detail.client.DetailClientActivity
+import com.capstone.project.kerjamin.data.ui.auth.LoginActivity
 import com.capstone.project.kerjamin.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -38,9 +38,9 @@ class ProfileFragment : Fragment() {
             getActivity()?.startActivity(intent)
         }
 
-        binding.btnLogout.setOnClickListener {
-            val intent = Intent(getActivity(), LoginActivity::class.java)
-            getActivity()?.startActivity(intent)
-        }
+//        binding.btnLogout.setOnClickListener {
+//            val intent = Intent(getActivity(), LoginActivity::class.java)
+//            getActivity()?.startActivity(intent)
+//        }
     }
 }

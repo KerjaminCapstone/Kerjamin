@@ -166,8 +166,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/layout_cost"
             style="@style/cardView"
+            app:cardCornerRadius="10dp"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="16dp"
@@ -182,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/final_cost" />
 
             <TextView
@@ -191,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="280dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/dummy" />
         </androidx.cardview.widget.CardView>
 
@@ -199,8 +200,9 @@
             android:id="@+id/layout_total"
             style="@style/cardView"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
+            app:cardCornerRadius="10dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@color/grey_100"
@@ -214,7 +216,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/total" />
 
             <TextView
@@ -223,7 +225,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="280dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/dummy" />
         </androidx.cardview.widget.CardView>
 
@@ -284,6 +286,35 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_rating"/>
+
+        <Button
+            android:id="@+id/btn_list"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/list_job"
+            android:textAppearance="@style/TextContent"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_comment" />
+
+        <Button
+            android:id="@+id/btn_whatsapp"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/chat"
+            android:textAppearance="@style/TextContent"
+            android:textSize="18sp"
+            app:backgroundTint="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_list" />
 
         <ProgressBar
             android:id="@+id/progressBar"

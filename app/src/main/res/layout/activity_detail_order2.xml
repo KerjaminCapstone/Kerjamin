@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingStart="0dp"
-                android:paddingEnd="100dp"
+                android:paddingEnd="170dp"
                 android:text="@string/status"
                 android:textStyle="bold" />
 
@@ -123,7 +123,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/todo"
-                android:src="@drawable/ic_refresh" />
+                android:src="@drawable/ic_refresh"
+                android:backgroundTint="@color/blue_dark"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -174,7 +175,8 @@
             android:id="@+id/layout_cost"
             style="@style/cardView"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            app:cardCornerRadius="10dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="16dp"
@@ -189,7 +191,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/final_cost" />
 
             <TextView
@@ -198,7 +200,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="280dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/dummy" />
         </androidx.cardview.widget.CardView>
 
@@ -206,8 +208,9 @@
             android:id="@+id/layout_total"
             style="@style/cardView"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
+            app:cardCornerRadius="10dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@color/grey_100"
@@ -221,7 +224,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/total" />
 
             <TextView
@@ -230,7 +233,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="280dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/dummy" />
         </androidx.cardview.widget.CardView>
 
@@ -250,13 +253,27 @@
         <Button
             android:id="@+id/btn_confirm"
             style="@style/ButtonPrimary"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="24dp"
             android:text="@string/confirm_finish"
             android:textAppearance="@style/TextContent"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fee" />
+
+        <Button
+            android:id="@+id/btn_report"
+            style="@style/ButtonPrimary"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/report"
+            android:textAppearance="@style/TextContent"
+            android:textSize="18sp"
+            app:backgroundTint="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_confirm" />
 
         <ProgressBar
             android:id="@+id/progressBar"

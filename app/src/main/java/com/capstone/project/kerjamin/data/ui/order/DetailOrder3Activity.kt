@@ -1,7 +1,10 @@
 package com.capstone.project.kerjamin.data.ui.order
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.capstone.project.kerjamin.data.ui.auth.RegisterActivity
+import com.capstone.project.kerjamin.data.ui.detail.job.DetailJobActivity
 import com.capstone.project.kerjamin.databinding.ActivityDetailOrder3Binding
 
 class DetailOrder3Activity : AppCompatActivity() {
@@ -15,10 +18,10 @@ class DetailOrder3Activity : AppCompatActivity() {
 
         supportActionBar?.title = "Detail Pesanan"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
+        binding.btnList.setOnClickListener {
+            val view = Intent(this@DetailOrder3Activity, DetailJobActivity::class.java)
+            startActivity(view)
+        }
     }
 }

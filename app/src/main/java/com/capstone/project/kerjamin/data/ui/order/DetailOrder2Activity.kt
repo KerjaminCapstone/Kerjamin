@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.data.ui.ReviewActivity
-import com.capstone.project.kerjamin.data.ui.detail.DetailFreelancerActivity
-import com.capstone.project.kerjamin.data.ui.detail.DetailJobActivity
+import com.capstone.project.kerjamin.data.ui.review.ReviewActivity
+import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
+import com.capstone.project.kerjamin.data.ui.detail.job.DetailJobActivity
 import com.capstone.project.kerjamin.databinding.ActivityDetailOrder2Binding
 
 class DetailOrder2Activity : AppCompatActivity() {
@@ -29,11 +29,6 @@ class DetailOrder2Activity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.detail_menu, menu)
@@ -51,6 +46,16 @@ class DetailOrder2Activity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        return true
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

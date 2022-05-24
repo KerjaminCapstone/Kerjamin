@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.ui.detail.DetailClientActivity">
+    tools:context=".data.ui.detail.client.DetailClientActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_user"
@@ -26,6 +26,7 @@
         android:layout_marginEnd="16dp"
         android:background="@color/grey_100"
         android:orientation="vertical"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_user">
@@ -51,6 +52,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/layout_name"
         style="@style/cardView"
+        app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -90,6 +92,7 @@
         android:layout_marginEnd="16dp"
         android:background="@color/grey_100"
         android:orientation="vertical"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_name">
@@ -113,8 +116,9 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/layout_phone"
+        android:id="@+id/layout_borndate"
         style="@style/cardView"
+        app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -125,6 +129,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_gender">
+
+        <TextView
+            android:id="@+id/borndtae"
+            style="@style/TextContent.Small.Grey"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/born_date"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_borndate"
+            style="@style/TextContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/born_date" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_phone"
+        style="@style/cardView"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/grey_100"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_borndate">
 
         <TextView
             android:id="@+id/phone"
@@ -147,6 +184,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/layout_email"
         style="@style/cardView"
+        app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -175,6 +213,18 @@
             android:layout_marginTop="18dp"
             android:text="@string/email" />
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_logout"
+        style="@style/ButtonPrimary"
+        android:layout_marginBottom="70dp"
+        android:text="@string/logout"
+        android:textAppearance="@style/TextContent"
+        android:textSize="18sp"
+        app:backgroundTint="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"

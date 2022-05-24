@@ -13,5 +13,6 @@
     <color name="black_light">#191919</color>
     <color name="grey_100">#F4F4F4</color>
     <color name="red">#DC1D1D</color>
+    <color name="green">#40DC1D</color>
 
 </resources>

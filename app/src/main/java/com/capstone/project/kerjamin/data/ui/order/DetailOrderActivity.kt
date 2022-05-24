@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.data.ui.detail.DetailFreelancerActivity
-import com.capstone.project.kerjamin.data.ui.PaymentActivity
+import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
+import com.capstone.project.kerjamin.data.ui.payment.PaymentActivity
 import com.capstone.project.kerjamin.databinding.ActivityDetailOrderBinding
 
 class DetailOrderActivity : AppCompatActivity() {
@@ -28,11 +28,6 @@ class DetailOrderActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.whatsapp_menu, menu)
@@ -46,6 +41,16 @@ class DetailOrderActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        return true
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

@@ -2,54 +2,95 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.capstone.project.kerjamin" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
     <application
+        android:name=".data.Kerjamin"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kerjamin" >
+
         <activity
-            android:name=".data.ui.detail.DetailJobActivity"
-            android:exported="false" />
+            android:name=".data.ui.detail.job.DetailJobActivity"
+            android:exported="false"
+            android:parentActivityName=".data.ui.order.DetailOrder2Activity" />
+
         <activity
-            android:name=".data.ui.PaymentActivity"
-            android:exported="false" />
+            android:name=".data.ui.payment.PaymentActivity"
+            android:exported="false"
+            android:parentActivityName=".data.ui.order.DetailOrderActivity"/>
+
         <activity
             android:name=".data.ui.order.DetailOrder2Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".data.ui.payment.PaymentActivity"/>
+
         <activity
             android:name=".data.ui.order.DetailOrder3Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".data.ui.MenuActivity"/>
+
         <activity
             android:name=".data.ui.list.FreelancerArsitecActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".data.ui.MenuActivity"/>
+
         <activity
             android:name=".data.ui.list.FreelancerBuilderActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".data.ui.MenuActivity"/>
+
         <activity
             android:name=".data.ui.list.FreelancerCleanerActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".data.ui.MenuActivity" />
+        </activity>
+
         <activity
             android:name=".data.ui.list.FreelancerServiceActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".data.ui.MenuActivity" />
+
         <activity
-            android:name=".data.ui.DetailOrder"
-            android:exported="false" />
+            android:name=".data.ui.detail.client.DetailClientActivity"
+            android:exported="false"
+            android:parentActivityName=".data.ui.MenuActivity"/>
+
         <activity
-            android:name=".data.ui.detail.DetailClientActivity"
-            android:exported="false" />
-        <activity
-            android:name=".data.ui.ReviewActivity"
-            android:exported="false" />
+            android:name=".data.ui.review.ReviewActivity"
+            android:exported="false"
+            android:parentActivityName=".data.ui.order.DetailOrder2Activity"/>
+
         <activity
             android:name=".data.ui.order.DetailOrderActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".data.ui.problem.ProblemActivity"/>
+
         <activity
-            android:name=".data.ui.ProblemActivity"
-            android:exported="false" />
+            android:name=".data.ui.problem.ProblemActivity"
+            android:exported="false"
+            android:parentActivityName=".data.ui.detail.freelancer.DetailFreelancerActivity"/>
+
         <activity
-            android:name=".data.ui.detail.DetailFreelancerActivity"
+            android:name=".data.ui.detail.freelancer.DetailFreelancerActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -67,21 +108,18 @@
             android:value="AIzaSyA_VGURj9q9SNbmnloC2t9iJK-bxdvb3Sw" />
 
         <activity
-            android:name=".data.ui.MapsActivity"
+            android:name=".data.ui.maps.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".data.ui.ListFreelancerActivity"
-            android:exported="false" />
         <activity
             android:name=".data.ui.MenuActivity"
             android:exported="false"
             android:label="@string/title_activity_menu" />
         <activity
-            android:name=".data.ui.RegisterActivity"
+            android:name=".data.ui.auth.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".data.ui.LoginActivity"
+            android:name=".data.ui.auth.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".data.ui.SplashScreen"
@@ -95,6 +133,16 @@
         <activity
             android:name=".data.ui.MainActivity"
             android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.capstone.project.kerjamin"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

@@ -82,16 +82,17 @@
             android:text="@string/term" />
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btn_logout"
-        style="@style/ButtonPrimary"
-        android:textAppearance="@style/TextContent"
-        android:textSize="18sp"
-        android:layout_marginBottom="75dp"
-        android:text="@string/logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_logout"-->
+<!--        style="@style/ButtonPrimary"-->
+<!--        android:textAppearance="@style/TextContent"-->
+<!--        android:textSize="18sp"-->
+<!--        android:layout_marginBottom="75dp"-->
+<!--        android:text="@string/logout"-->
+<!--        app:backgroundTint="@color/red"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <ProgressBar
         android:id="@+id/progressBar"
