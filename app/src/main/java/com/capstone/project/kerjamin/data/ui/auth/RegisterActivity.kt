@@ -43,9 +43,9 @@ class RegisterActivity : AppCompatActivity() {
         binding.edtPassword.doOnTextChanged { text, _, _, _ ->
             if (text!!.length < 6) {
                 binding.passwordInput.error = "Password tidak boleh kurang dari 6 huruf"
-            }
+            } else
                 binding.passwordInput.error = null
-            }
+        }
 
         binding.btnRegister.setOnClickListener {
 
@@ -108,9 +108,6 @@ class RegisterActivity : AppCompatActivity() {
         if (!Patterns.EMAIL_ADDRESS.matcher(emailValid).matches()) {
             return getString(R.string.invalid_email)
         } else {
-            val registrationIntentAccount = Intent(this@RegisterActivity, LoginActivity::class.java)
-            startActivity(registrationIntentAccount)
-            finish()
             registrationAccount()
 
         }
@@ -128,7 +125,7 @@ class RegisterActivity : AppCompatActivity() {
         val accountPhone = binding.edtPhone.text.toString().trim()
         val accountEmail = binding.edtEmail.text.toString().trim()
         val accountPassword = binding.edtPassword.text.toString().trim()
-        val accountRole = "client"
+        val accountRole = "CL"
 
 
         showLoading(true)
@@ -162,10 +159,13 @@ class RegisterActivity : AppCompatActivity() {
                             getString(R.string.success_register),
                             Toast.LENGTH_LONG
                         ).show()
+                        val intentClient = Intent(this@RegisterActivity, LoginActivity::class.java)
+                        intentClient.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intentClient)
                         finish()
 
                     } else {
-                        showLoading(true)
+                        showLoading(false)
                         Toast.makeText(
                             applicationContext,
                             getString(R.string.failed_register),

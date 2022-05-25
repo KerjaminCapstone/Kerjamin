@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".data.ui.detail.client.DetailClientActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_user"
@@ -102,7 +106,7 @@
             style="@style/TextContent.Small.Grey"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/gender"
+            android:text="@string/jenis_kelamin"
             android:textSize="11sp" />
 
         <TextView
@@ -112,11 +116,11 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/gender" />
+            android:text="@string/jenis_kelamin" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/layout_borndate"
+        android:id="@+id/layout_address"
         style="@style/cardView"
         app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
@@ -131,21 +135,21 @@
         app:layout_constraintTop_toBottomOf="@+id/layout_gender">
 
         <TextView
-            android:id="@+id/borndtae"
+            android:id="@+id/address"
             style="@style/TextContent.Small.Grey"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/born_date"
+            android:text="@string/adress"
             android:textSize="11sp" />
 
         <TextView
-            android:id="@+id/tv_borndate"
+            android:id="@+id/tv_address"
             style="@style/TextContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/born_date" />
+            android:text="@string/adress" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -161,7 +165,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_borndate">
+        app:layout_constraintTop_toBottomOf="@+id/layout_address">
 
         <TextView
             android:id="@+id/phone"
@@ -217,14 +221,14 @@
     <Button
         android:id="@+id/btn_logout"
         style="@style/ButtonPrimary"
-        android:layout_marginBottom="70dp"
+        android:layout_marginTop="50dp"
         android:text="@string/logout"
         android:textAppearance="@style/TextContent"
         android:textSize="18sp"
         app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_email" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -237,5 +241,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="gone" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
