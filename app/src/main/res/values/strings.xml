@@ -124,6 +124,7 @@
 
     <!--    Login-->
     <string name="failed_login">Email dan Password tidak sesuai</string>
+    <string name="success_login">Selamat Datang</string>
     <string name="empty_email">Masukan email anda</string>
     <string name="empty_password">Masukan password anda</string>
     <string name="invalid_email">Email tidak valid</string>

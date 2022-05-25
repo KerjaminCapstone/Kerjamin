@@ -1,6 +1,7 @@
 package com.capstone.project.kerjamin.data.api
 
 import androidx.viewbinding.BuildConfig
+import com.google.android.gms.common.api.Api
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,29 +12,17 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-@Module
-@InstallIn(SingletonComponent::class)
-object ApiConfiguration {
-    @Provides
-    fun apiClient(retrofit: Retrofit): ApiClient {
-        return retrofit.create(ApiClient::class.java)
-    }
-    @Provides
-    fun retrofitClient(): Retrofit {
-        val loggingInterceptor = if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        } else {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
-        }
-
+class ApiConfiguration {
+    fun getApiClient(): ApiClient {
+        val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
-
-        return Retrofit.Builder()
+        val retrofit = Retrofit.Builder()
             .baseUrl("https://kerjamin-api-v1.herokuapp.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
+        return retrofit.create(ApiClient::class.java)
     }
 }

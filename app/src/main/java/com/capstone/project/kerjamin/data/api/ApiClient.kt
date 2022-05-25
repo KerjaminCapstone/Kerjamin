@@ -12,9 +12,8 @@ import retrofit2.http.POST
 
 interface ApiClient {
 
-
     @POST("/auth/sign-up")
-    fun registerClient(@Body register : RegisterModel): Call<ResponseRegister>
+    fun registerClient(@Header("Content-type") header: String, @Body register : RegisterModel): Call<ResponseRegister>
 
 
     @POST("/auth/login")
