@@ -11,5 +11,8 @@ data class ResponseLogin(
     val message: String,
 
     @SerializedName("token")
-    val token: String
+    val token: String,
+
+    @SerializedName("isLogin")
+    val isLogin: Boolean
 )

@@ -16,13 +16,14 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
+
 class ClientViewModel (private val preferences: ClientPreferences) : ViewModel(){
 
     val dataClient = MutableLiveData<ArrayList<ClientModel>?>()
 
     fun tokenSave(login: ResponseLogin){
         viewModelScope.launch {
-            preferences.saveToken(ResponseLogin(login.error, login.message, login.token))
+            preferences.saveToken(login)
         }
     }
 

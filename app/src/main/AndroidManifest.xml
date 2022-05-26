@@ -32,8 +32,7 @@
 
         <activity
             android:name=".data.ui.detail.job.DetailJobActivity"
-            android:exported="false"
-            android:parentActivityName=".data.ui.order.DetailOrder2Activity" />
+            android:exported="false" />
 
         <activity
             android:name=".data.ui.payment.PaymentActivity"

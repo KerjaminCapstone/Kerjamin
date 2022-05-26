@@ -16,4 +16,9 @@ class DetailJobActivity : AppCompatActivity() {
         supportActionBar?.title = "Detail Pekerjaan"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

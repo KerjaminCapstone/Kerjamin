@@ -41,7 +41,7 @@ class HelpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val num = "+6289513169767"
+        val num = "+6283870804464"
         val text = "Hello"
 
         binding.layoutWa.setOnClickListener {

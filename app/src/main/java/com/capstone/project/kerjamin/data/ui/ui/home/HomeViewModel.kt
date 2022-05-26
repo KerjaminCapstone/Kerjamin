@@ -1,13 +1,20 @@
 package com.capstone.project.kerjamin.data.ui.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.capstone.project.kerjamin.data.database.model.ClientModel
+import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
+import com.capstone.project.kerjamin.data.database.response.ResponseLogin
+import kotlinx.coroutines.launch
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel (private val preferences: ClientPreferences) : ViewModel(){
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    fun getAccount(): LiveData<ResponseLogin> {
+        return preferences.getToken().asLiveData()
     }
-    val text: LiveData<String> = _text
+
+    fun logout() {
+        viewModelScope.launch {
+            preferences.logOut()
+        }
+    }
 }

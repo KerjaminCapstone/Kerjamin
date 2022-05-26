@@ -1,18 +1,13 @@
 package com.capstone.project.kerjamin.data.database.preference
 
-import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import com.capstone.project.kerjamin.data.database.response.ResponseLogin
-import com.capstone.project.kerjamin.data.helper.setClientIdlingResource
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
 class ClientPreferences  private constructor(private val dataStore: DataStore<Preferences>) {
 
@@ -22,6 +17,7 @@ class ClientPreferences  private constructor(private val dataStore: DataStore<Pr
                 preferences[ACCOUNT_ERROR_KEY]?:false,
                 preferences[ACCOUT_MESSAGE_KEY]?:"",
                 preferences[ACCOUNT_TOKEN_KEY]?:"",
+                preferences[ACCOUNT_STATE_KEY]?:false
             )
         }
     }
@@ -31,13 +27,17 @@ class ClientPreferences  private constructor(private val dataStore: DataStore<Pr
             preferences[ACCOUNT_ERROR_KEY]= login.error
             preferences[ACCOUT_MESSAGE_KEY]= login.message
             preferences[ACCOUNT_TOKEN_KEY]= login.token
+            preferences[ACCOUNT_STATE_KEY]= login.isLogin
 
         }
     }
 
     suspend fun logOut(){
-        dataStore.edit {
-            it.clear()
+        dataStore.edit { preferences ->
+            preferences[ACCOUNT_ERROR_KEY] = false
+            preferences[ACCOUT_MESSAGE_KEY] = ""
+            preferences[ACCOUNT_TOKEN_KEY] = ""
+            preferences[ACCOUNT_STATE_KEY] = false
         }
     }
 
@@ -48,6 +48,7 @@ class ClientPreferences  private constructor(private val dataStore: DataStore<Pr
         private val ACCOUNT_ERROR_KEY = booleanPreferencesKey("error")
         private val ACCOUT_MESSAGE_KEY = stringPreferencesKey("message")
         private val ACCOUNT_TOKEN_KEY = stringPreferencesKey("token")
+        private val ACCOUNT_STATE_KEY = booleanPreferencesKey("isLogin")
 
         fun getInstanceClient(dataStore: DataStore<Preferences>): ClientPreferences {
             return INSTANCE_CLIENT ?: synchronized(this){

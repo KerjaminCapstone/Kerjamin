@@ -56,6 +56,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    Detail-->
+    <string name="span1">Baik</string>
+    <string name="span2">Sopan</string>
+    <string name="span3">Teliti</string>
+    <string name="span4">Cekatan</string>
 
     <!--    card order-->
     <string name="category">Kategori Jasa</string>

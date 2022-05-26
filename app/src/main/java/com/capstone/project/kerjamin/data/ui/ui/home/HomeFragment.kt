@@ -1,11 +1,11 @@
 package com.capstone.project.kerjamin.data.ui.ui.home
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.capstone.project.kerjamin.data.ui.list.FreelancerArsitecActivity
 import com.capstone.project.kerjamin.data.ui.list.FreelancerBuilderActivity
 import com.capstone.project.kerjamin.data.ui.list.FreelancerCleanerActivity

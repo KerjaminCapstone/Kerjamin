@@ -14,6 +14,7 @@ import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
 import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
 import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
 import com.capstone.project.kerjamin.data.ui.auth.LoginActivity
+import com.capstone.project.kerjamin.data.ui.auth.RegisterActivity
 import com.capstone.project.kerjamin.data.ui.problem.ProblemActivity
 import com.capstone.project.kerjamin.databinding.ActivityDetailClientBinding
 
@@ -33,34 +34,8 @@ class DetailClientActivity : AppCompatActivity() {
         supportActionBar?.title = "Informasi Akun"
 
         binding.btnLogout.setOnClickListener {
-            viewModel.tokenClear()
-            finish()
+            val view = Intent(this@DetailClientActivity, LoginActivity::class.java)
+            startActivity(view)
         }
-
-        val preferences = ClientPreferences.getInstanceClient(dataStore)
-        viewModel = ViewModelProvider(
-            this, ViewModelFactory(preferences)
-        )[ClientViewModel::class.java]
-
-        viewModel.tokenGet().observe(this){client ->
-            if(!client.error){
-                val intentStory = Intent(this@DetailClientActivity, LoginActivity::class.java)
-                intentStory.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intentStory)
-            }
-            viewModel.setToken(token = client.token)
-        }
-
-        viewDetailClient()
-    }
-
-    private fun viewDetailClient(){
-        val detailClient = intent.getParcelableExtra<ClientModel>("clientData") as ClientModel
-        binding.tvNik.text = detailClient.nik
-        binding.tvName.text = detailClient.name
-        binding.tvGender.text = detailClient.is_male.toString()
-        binding.tvAddress.text = detailClient.address
-        binding.tvPhone.text = detailClient.no_wa
-        binding.tvEmail.text = detailClient.email
     }
 }

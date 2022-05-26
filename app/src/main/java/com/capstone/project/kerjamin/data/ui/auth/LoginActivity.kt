@@ -2,16 +2,12 @@ package com.capstone.project.kerjamin.data.ui.auth
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowManager
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.core.widget.doOnTextChanged
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -26,8 +22,6 @@ import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
 import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
 import com.capstone.project.kerjamin.data.ui.MenuActivity
 import com.capstone.project.kerjamin.databinding.ActivityLoginBinding
-import com.loopj.android.http.AsyncHttpClient.log
-import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -120,9 +114,12 @@ class LoginActivity : AppCompatActivity() {
                     ) {
                         val responseBody = response.body()
                         if (response.isSuccessful && responseBody != null) {
-                            viewModel.tokenSave(ResponseLogin(login.error,
+                            viewModel.tokenSave(ResponseLogin(
+                                login.error,
                                 login.message,
-                                login.token))
+                                login.token,
+                                login.isLogin
+                            ))
                             showLoading(false)
 
                             Toast.makeText(applicationContext,
