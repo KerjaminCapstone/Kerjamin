@@ -6,9 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.capstone.project.kerjamin.data.ui.auth.RegisterActivity
 import com.capstone.project.kerjamin.data.ui.detail.job.DetailJobActivity
-import com.capstone.project.kerjamin.data.ui.problem.ProblemActivity
 import com.capstone.project.kerjamin.databinding.ActivityDetailOrder3Binding
 
 class DetailOrder3Activity : AppCompatActivity() {

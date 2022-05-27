@@ -50,7 +50,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/nik" />
+            android:text="@string/nik1" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -83,7 +83,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/name_client" />
+            android:text="@string/name1" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -116,7 +116,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/jenis_kelamin" />
+            android:text="@string/jenis_kelamin1" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -149,7 +149,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/adress" />
+            android:text="@string/adress1" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -182,7 +182,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/phone" />
+            android:text="@string/phone1" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -215,7 +215,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/email" />
+            android:text="@string/email1" />
     </androidx.cardview.widget.CardView>
 
     <Button

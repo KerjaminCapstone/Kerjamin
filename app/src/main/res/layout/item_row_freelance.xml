@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_gravity="center"
+    android:layout_height="145dp"
+    android:padding="15dp"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="4dp"
     android:layout_marginRight="8dp"
@@ -14,79 +14,72 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
         android:padding="8dp">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_user"
+            android:id="@+id/img_item"
             android:layout_width="46dp"
             android:layout_height="69dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintVertical_bias="1.0"
             tools:src="@drawable/name">
 
         </androidx.appcompat.widget.AppCompatImageView>
 
         <TextView
-            android:id="@+id/tv_username"
+            android:id="@+id/username_item"
             style="@style/TextContent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_toEndOf="@id/img_user"
+            android:layout_toEndOf="@id/img_item"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="1.0"
-            card_view:layout_constraintStart_toEndOf="@+id/img_user"
-            card_view:layout_constraintTop_toTopOf="@+id/img_user"
+            card_view:layout_constraintStart_toEndOf="@+id/img_item"
+            card_view:layout_constraintTop_toTopOf="@+id/img_item"
             tools:text="@string/name_free" />
 
         <TextView
-            android:id="@+id/tv_specialist"
+            android:id="@+id/specialist_item"
             style="@style/TextContent.Small"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_toEndOf="@id/img_user"
+            android:layout_toEndOf="@id/img_item"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/img_user"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_username"
+            card_view:layout_constraintStart_toEndOf="@+id/img_item"
+            card_view:layout_constraintTop_toBottomOf="@+id/username_item"
             tools:text="@string/specialist" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <TextView
+            android:id="@+id/distant_item"
+            style="@style/TextContent.Form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal"
+            android:drawableStart="@drawable/ic_location"
+            card_view:layout_constraintStart_toEndOf="@+id/img_item"
+            card_view:layout_constraintTop_toBottomOf="@+id/specialist_item"
+            tools:text="@string/distant_free" />
+
+        <TextView
+            android:id="@+id/rating_item"
+            style="@style/TextContent.Form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawableStart="@drawable/ic_rating"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/img_user"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_specialist">
-
-            <TextView
-                android:id="@+id/tv_followers"
-                android:layout_width="141dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="16dp"
-                style="@style/TextContent.Form"
-                android:drawableStart="@drawable/ic_location"
-                tools:text="@string/distant_free" />
-
-            <TextView
-                android:id="@+id/tv_following"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                style="@style/TextContent.Form"
-                android:drawableStart="@drawable/ic_rating"
-                tools:text="@string/rating" />
-        </LinearLayout>
+            card_view:layout_constraintTop_toBottomOf="@+id/specialist_item"
+            tools:text="@string/rating" />
 
         <ProgressBar
             android:id="@+id/progressBar"

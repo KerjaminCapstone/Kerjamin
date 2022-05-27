@@ -1,4 +1,4 @@
-package com.capstone.project.kerjamin.data.ui.auth
+package com.capstone.project.kerjamin.data.ui.auth.login
 
 import android.content.Context
 import android.content.Intent
@@ -15,12 +15,13 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.api.ApiConfiguration
-import com.capstone.project.kerjamin.data.database.model.LoginModel
 import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
 import com.capstone.project.kerjamin.data.database.response.ResponseLogin
 import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
 import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
+import com.capstone.project.kerjamin.data.ui.HomeActivity
 import com.capstone.project.kerjamin.data.ui.MenuActivity
+import com.capstone.project.kerjamin.data.ui.auth.register.RegisterActivity
 import com.capstone.project.kerjamin.databinding.ActivityLoginBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModel : ClientViewModel
     private lateinit var login : ResponseLogin
+    private lateinit var preferences: ClientPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,13 +76,9 @@ class LoginActivity : AppCompatActivity() {
     private fun setupViewModel(){
         val preference= ClientPreferences.getInstanceClient(dataStore)
         viewModel = ViewModelProvider(
-            this@LoginActivity,
+            this,
             ViewModelFactory(preference)
         )[ClientViewModel::class.java]
-
-        viewModel.tokenGet().observe(this){login->
-            this.login = login
-        }
     }
 
     private fun loginAccount(){
@@ -105,23 +103,19 @@ class LoginActivity : AppCompatActivity() {
 
             showLoading(true)
             ApiConfiguration().getApiClient()
-                .loginClient("application/json",LoginModel(emailAccount, passwordAccount, roleAccount))
+                .loginClient("application/json",
+                    LoginModel(emailAccount, passwordAccount, roleAccount)
+                )
                 .enqueue(object : Callback<ResponseLogin> {
 
                     override fun onResponse(
                         call: Call<ResponseLogin>,
                         response: Response<ResponseLogin>,
                     ) {
-                        val responseBody = response.body()
-                        if (response.isSuccessful && responseBody != null) {
-                            viewModel.tokenSave(ResponseLogin(
-                                login.error,
-                                login.message,
-                                login.token,
-                                login.isLogin
-                            ))
-                            showLoading(false)
-
+                        showLoading(false)
+                        if (response.isSuccessful) {
+                            val token = response.body()?.token.toString()
+                            viewModel.tokenSave(token)
                             Toast.makeText(applicationContext,
                                 getString((R.string.success_login)),
                                 Toast.LENGTH_SHORT).show()
@@ -136,8 +130,9 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(applicationContext,
                                 getString(R.string.failed_login),
                                 Toast.LENGTH_SHORT).show()
-                            Log.d(LoginActivity::class.java.simpleName,
-                                response.body()?.message.toString())
+                            Log.d(
+                                LoginActivity::class.java.simpleName,
+                                response.body()?.error.toString())
                         }
                     }
 

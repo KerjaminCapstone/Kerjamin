@@ -15,28 +15,20 @@ class ClientPreferences  private constructor(private val dataStore: DataStore<Pr
         return dataStore.data.map { preferences ->
             ResponseLogin(
                 preferences[ACCOUNT_ERROR_KEY]?:false,
-                preferences[ACCOUT_MESSAGE_KEY]?:"",
                 preferences[ACCOUNT_TOKEN_KEY]?:"",
                 preferences[ACCOUNT_STATE_KEY]?:false
             )
         }
     }
 
-    suspend fun saveToken(login: ResponseLogin){
+    suspend fun saveToken(token: String){
         dataStore.edit { preferences ->
-            preferences[ACCOUNT_ERROR_KEY]= login.error
-            preferences[ACCOUT_MESSAGE_KEY]= login.message
-            preferences[ACCOUNT_TOKEN_KEY]= login.token
-            preferences[ACCOUNT_STATE_KEY]= login.isLogin
-
+            preferences[ACCOUNT_TOKEN_KEY]= token
         }
     }
 
     suspend fun logOut(){
         dataStore.edit { preferences ->
-            preferences[ACCOUNT_ERROR_KEY] = false
-            preferences[ACCOUT_MESSAGE_KEY] = ""
-            preferences[ACCOUNT_TOKEN_KEY] = ""
             preferences[ACCOUNT_STATE_KEY] = false
         }
     }

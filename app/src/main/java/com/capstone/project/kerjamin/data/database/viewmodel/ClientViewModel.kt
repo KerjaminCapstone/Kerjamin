@@ -4,26 +4,22 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.capstone.project.kerjamin.data.api.ApiConfiguration
 import com.capstone.project.kerjamin.data.database.model.ClientModel
-import com.capstone.project.kerjamin.data.database.model.LoginModel
-import com.capstone.project.kerjamin.data.database.model.RegisterModel
 import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
 import com.capstone.project.kerjamin.data.database.response.ClientResponse
 import com.capstone.project.kerjamin.data.database.response.ResponseLogin
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import javax.inject.Inject
 
 
 class ClientViewModel (private val preferences: ClientPreferences) : ViewModel(){
 
     val dataClient = MutableLiveData<ArrayList<ClientModel>?>()
 
-    fun tokenSave(login: ResponseLogin){
+    fun tokenSave(token: String){
         viewModelScope.launch {
-            preferences.saveToken(login)
+            preferences.saveToken(token)
         }
     }
 

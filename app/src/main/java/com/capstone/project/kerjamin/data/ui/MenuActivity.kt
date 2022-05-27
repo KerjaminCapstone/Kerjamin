@@ -1,27 +1,34 @@
 package com.capstone.project.kerjamin.data.ui
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.capstone.project.kerjamin.R
+import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
+import com.capstone.project.kerjamin.data.database.response.ResponseLogin
 import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
-import com.capstone.project.kerjamin.data.ui.auth.LoginActivity
+import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
+import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuBinding
     private lateinit var viewModel : ClientViewModel
-
-    private lateinit var dataStore:DataStore<Preferences>
+    private lateinit var login : ResponseLogin
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,5 +51,23 @@ class MenuActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        setupViewModel()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun setupViewModel(){
+        val preferences = ClientPreferences.getInstanceClient(dataStore)
+        viewModel = ViewModelProvider(
+            this, ViewModelFactory(preferences)
+        )[ClientViewModel::class.java]
+
+        viewModel.tokenGet().observe(this) { client ->
+            if (!client.isLogin) {
+                val intentClient = Intent(this@MenuActivity, LoginActivity::class.java)
+                intentClient.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intentClient)
+            }
+            viewModel.setToken(token = client.token)
+        }
     }
 }

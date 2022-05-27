@@ -1,23 +1,40 @@
 package com.capstone.project.kerjamin.data.ui.ui.home
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.*
+import androidx.datastore.core.DataStore
+import androidx.datastore.dataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
+import com.capstone.project.kerjamin.data.database.response.ResponseLogin
+import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
+import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
+import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.data.ui.list.FreelancerArsitecActivity
 import com.capstone.project.kerjamin.data.ui.list.FreelancerBuilderActivity
 import com.capstone.project.kerjamin.data.ui.list.FreelancerCleanerActivity
 import com.capstone.project.kerjamin.data.ui.list.FreelancerServiceActivity
 import com.capstone.project.kerjamin.databinding.FragmentHomeBinding
+import com.google.android.material.transition.MaterialFadeThrough
 
 class HomeFragment : Fragment() {
+
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
+
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var viewModel : ClientViewModel
+    private lateinit var login : ResponseLogin
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +70,17 @@ class HomeFragment : Fragment() {
         binding.btnArsitec.setOnClickListener {
             val intent = Intent(getActivity(), FreelancerArsitecActivity::class.java)
             getActivity()?.startActivity(intent)
+        }
+    }
+
+    private fun setupViewModel(dataStore: DataStore<Preferences>) {
+        val preferences = ClientPreferences.getInstanceClient(dataStore)
+        viewModel = ViewModelProvider(
+            this, ViewModelFactory(preferences)
+        )[ClientViewModel::class.java]
+
+        viewModel.tokenGet().observe(viewLifecycleOwner){client->
+            this.login = client
         }
     }
 }

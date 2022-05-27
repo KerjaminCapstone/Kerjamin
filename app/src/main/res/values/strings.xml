@@ -148,4 +148,31 @@
     <string name="empty_phone">Masukan nomor whatsapp</string>
     <string name="empty_borndate">Masukan tanggal lahir anda</string>
     <string name="success_register">Selamat! Akun anda berhasil dibuat</string>
+
+
+    <!--    Fake Data Client-->
+    <string name="email1">hanin@gmail.com</string>
+    <string name="nik1">123456789</string>
+    <string name="name1">Hanindya</string>
+    <string name="born_date1">32 Maret 2000</string>
+    <string name="phone1">08936527644</string>
+    <string name="adress1">Jl. Sutawinangun</string>
+    <string name="username1">susan</string>
+    <string name="jenis_kelamin1">perempuan</string>
+
+    <!--    Fake Data Freelancer-->
+    <string name="name2">Dadang Sudrajat</string>
+    <string name="distant_free2">1 Km</string>
+    <string name="skill2">Tukang cat</string>
+    <string name="rating2">7</string>
+    <string name="specialist2">Tukang bangunan</string>
+    <string name="adress2">Jl. Tuparev</string>
+    <string name="jenis_kelamin2">Pria</string>
+
+    <!--   Fake Detail Job-->
+    <string name="tv_problem3">Tembok saya retak</string>
+    <string name="tv_review3">Pekerjaannya sangat rapih, orangnya juga baik dan cekatan</string>
+    <string name="start_cost3">Rp 400.000</string>
+    <string name="final_cost3">Rp 400.000</string>
+    <string name="total3">Rp 408.000</string>
 </resources>

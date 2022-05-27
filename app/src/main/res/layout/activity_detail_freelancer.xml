@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/name_free"
+        android:text="@string/name2"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="18dp"
-            android:text="@string/specialist"/>
+            android:text="@string/specialist2"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:text="@string/skill" />
+            android:text="@string/skill2" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -129,7 +129,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/adress" />
+            android:text="@string/adress2" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -162,7 +162,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="18dp"
-            android:text="@string/jenis_kelamin"/>
+            android:text="@string/jenis_kelamin2"/>
     </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -186,9 +186,9 @@
                 style="@style/TextContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
-                android:text="@string/rating" />
+                android:text="@string/rating2" />
 
             <ImageView
                 android:layout_width="wrap_content"

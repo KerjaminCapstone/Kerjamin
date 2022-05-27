@@ -1,7 +1,7 @@
 package com.capstone.project.kerjamin.data.api
 
-import com.capstone.project.kerjamin.data.database.model.LoginModel
-import com.capstone.project.kerjamin.data.database.model.RegisterModel
+import com.capstone.project.kerjamin.data.ui.auth.login.LoginModel
+import com.capstone.project.kerjamin.data.ui.auth.register.RegisterModel
 import com.capstone.project.kerjamin.data.database.response.ClientResponse
 import com.capstone.project.kerjamin.data.database.response.ResponseLogin
 import com.capstone.project.kerjamin.data.database.response.ResponseRegister

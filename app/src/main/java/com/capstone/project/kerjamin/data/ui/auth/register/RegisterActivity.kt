@@ -1,25 +1,18 @@
-package com.capstone.project.kerjamin.data.ui.auth
+package com.capstone.project.kerjamin.data.ui.auth.register
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowManager
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.core.widget.doOnTextChanged
 import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.api.ApiConfiguration
-import com.capstone.project.kerjamin.data.database.model.RegisterModel
 import com.capstone.project.kerjamin.data.database.response.ResponseRegister
-import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
-import com.capstone.project.kerjamin.data.ui.MenuActivity
+import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.databinding.ActivityRegisterBinding
-import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,11 +43,9 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
 
             val nikAccount = binding.edtNik.text.toString()
-            val username = binding.edtUsername.text.toString()
             val nameAccount = binding.edtName.text.toString()
             val addressAccount = binding.edtAddress.text.toString()
             val genderAccount = binding.edtGender.text.toString()
-            val bornDate = binding.edtBorndate.text.toString()
             val phoneAccount = binding.edtPhone.text.toString()
             val emailAccount = binding.edtEmail.text.toString()
             val passwordAccount = binding.edtPassword.text.toString()
@@ -65,9 +56,6 @@ class RegisterActivity : AppCompatActivity() {
                 nikAccount.isEmpty() -> {
                     binding.nikInput.error = getString(R.string.empty_nik)
                 }
-                username.isEmpty() -> {
-                    binding.usernameInput.error = getString(R.string.empty_username)
-                }
                 nameAccount.isEmpty() -> {
                     binding.nameInput.error = getString(R.string.empty_name)
                 }
@@ -76,9 +64,6 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 genderAccount.isEmpty() -> {
                     binding.genderInput.error = getString(R.string.empty_gender)
-                }
-                bornDate.isEmpty() -> {
-                    binding.borndateInput.error = getString(R.string.empty_borndate)
                 }
                 phoneAccount.isEmpty() -> {
                     binding.phoneInput.error = getString(R.string.empty_phone)
@@ -117,11 +102,9 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun registrationAccount() {
         val accountNik = binding.edtNik.text.toString().trim()
-        val accountUsername = binding.edtUsername.text.toString().trim()
         val accountName = binding.edtName.text.toString().trim()
         val accountAddress = binding.edtAddress.text.toString().trim()
         val accountGender = binding.edtGender.text.toString().trim()
-        val borndate = binding.edtBorndate.text.toString().trim()
         val accountPhone = binding.edtPhone.text.toString().trim()
         val accountEmail = binding.edtEmail.text.toString().trim()
         val accountPassword = binding.edtPassword.text.toString().trim()
@@ -133,15 +116,14 @@ class RegisterActivity : AppCompatActivity() {
         ApiConfiguration().getApiClient().registerClient("application/json",
             RegisterModel(
                 accountNik,
-                accountUsername,
                 accountName,
                 accountAddress,
                 accountGender,
-                borndate,
                 accountPhone,
                 accountEmail,
                 accountPassword,
-                accountRole))
+                accountRole)
+        )
             .enqueue(object : Callback<ResponseRegister> {
                 override fun onFailure(call: Call<ResponseRegister>, t: Throwable) {
                     showLoading(false)
@@ -177,7 +159,7 @@ class RegisterActivity : AppCompatActivity() {
             })
     }
 
-    private fun showLoading(isLoading: Boolean) {
+    internal fun showLoading(isLoading: Boolean) {
         if (isLoading) {
             binding.progressBar.visibility = View.VISIBLE
         } else {

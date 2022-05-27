@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.capstone.project.kerjamin.data.ui.auth.LoginActivity
+import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.databinding.ActivitySplashScreenBinding
 
 class SplashScreen : AppCompatActivity() {

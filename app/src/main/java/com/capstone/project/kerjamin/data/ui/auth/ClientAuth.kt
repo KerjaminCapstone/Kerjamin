@@ -1,18 +1,5 @@
 package com.capstone.project.kerjamin.data.ui.auth
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.capstone.project.kerjamin.data.api.ApiClient
-import com.capstone.project.kerjamin.data.database.model.LoginModel
-import com.capstone.project.kerjamin.data.database.model.RegisterModel
-import com.capstone.project.kerjamin.data.database.response.ResponseLogin
-import com.capstone.project.kerjamin.data.database.response.ResponseRegister
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import javax.inject.Inject
-
 //class ClientAuth @Inject constructor(private val apiClient: ApiClient) {
 //
 //    private val _loadData = MutableLiveData<Boolean>()

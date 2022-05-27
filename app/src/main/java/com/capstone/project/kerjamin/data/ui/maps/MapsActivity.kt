@@ -32,11 +32,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         supportActionBar?.title = "Maps"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        binding.btnList.setOnClickListener {
-            val view = Intent(this@MapsActivity, FreelancerServiceActivity::class.java)
-            startActivity(view)
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
