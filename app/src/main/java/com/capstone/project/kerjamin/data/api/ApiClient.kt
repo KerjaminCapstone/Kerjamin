@@ -10,7 +10,7 @@ import retrofit2.http.*
 
 interface ApiClient {
 
-    @POST("auth/sign-up")
+    @POST("auth/sign-up/client")
     fun registerClient(@Header("Content-type") header: String, @Body register : RegisterModel): Call<ResponseRegister>
 
 

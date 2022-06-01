@@ -17,9 +17,8 @@ import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.api.ApiConfiguration
 import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
 import com.capstone.project.kerjamin.data.database.response.ResponseLogin
-import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
+import com.capstone.project.kerjamin.data.database.viewmodel.MainViewModel
 import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
-import com.capstone.project.kerjamin.data.ui.HomeActivity
 import com.capstone.project.kerjamin.data.ui.MenuActivity
 import com.capstone.project.kerjamin.data.ui.auth.register.RegisterActivity
 import com.capstone.project.kerjamin.databinding.ActivityLoginBinding
@@ -32,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
 
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var viewModel : ClientViewModel
+    private lateinit var viewModel : MainViewModel
     private lateinit var login : ResponseLogin
     private lateinit var preferences: ClientPreferences
 
@@ -78,7 +77,11 @@ class LoginActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(
             this,
             ViewModelFactory(preference)
-        )[ClientViewModel::class.java]
+        )[MainViewModel::class.java]
+
+        viewModel.tokenGet().observe(this){login->
+            this.login = login
+        }
     }
 
     private fun loginAccount(){
@@ -113,9 +116,15 @@ class LoginActivity : AppCompatActivity() {
                         response: Response<ResponseLogin>,
                     ) {
                         showLoading(false)
-                        if (response.isSuccessful) {
-                            val token = response.body()?.token.toString()
-                            viewModel.tokenSave(token)
+                        val responseBody = response.body()
+                        if (response.isSuccessful && responseBody != null) {
+//                            val token = response.body()?.token.toString()
+//                            viewModel.tokenSave(token)
+
+                            viewModel.tokenSave(ResponseLogin(false,
+                                login.token,
+                                true))
+
                             Toast.makeText(applicationContext,
                                 getString((R.string.success_login)),
                                 Toast.LENGTH_SHORT).show()

@@ -21,9 +21,11 @@ class ClientPreferences  private constructor(private val dataStore: DataStore<Pr
         }
     }
 
-    suspend fun saveToken(token: String){
+    suspend fun saveToken(login: ResponseLogin){
         dataStore.edit { preferences ->
-            preferences[ACCOUNT_TOKEN_KEY]= token
+            preferences[ACCOUNT_ERROR_KEY]= login.error
+            preferences[ACCOUNT_TOKEN_KEY]= login.token
+            preferences[ACCOUNT_STATE_KEY]= true
         }
     }
 

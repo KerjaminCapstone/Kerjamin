@@ -71,12 +71,12 @@ class FreelancerArsitecActivity : AppCompatActivity() {
 
         freelancerList = ArrayList()
 
-        freelancerList.add(Freelancer(R.drawable.ic_name, "Dadang Supriyatna", "Tukang cat", "1", "5"))
-        freelancerList.add(Freelancer(R.drawable.ic_name, "Maman", "Tukang alumunium", "1.2", "2"))
-        freelancerList.add(Freelancer(R.drawable.ic_name, "Aldi Rahmadi", "Tukang cor", "1,5", "3"))
-        freelancerList.add(Freelancer(R.drawable.ic_name, "Daniel Celo", "Tukang besi", "1.6", "2"))
-        freelancerList.add(Freelancer(R.drawable.ic_name, "Nur Ikhsan", "Tukang granit", "1.7", "5"))
-        freelancerList.add(Freelancer(R.drawable.ic_name, "Fahrurrozi", "Tukang listrik", "2", "5"))
+        freelancerList.add(Freelancer(R.drawable.name, "Dadang Supriyatna", "Tukang cat", "1 Km", "5"))
+        freelancerList.add(Freelancer(R.drawable.name, "Maman", "Tukang alumunium", "1.2 Km", "2"))
+        freelancerList.add(Freelancer(R.drawable.name, "Aldi Rahmadi", "Tukang cor", "1,5 Km", "3"))
+        freelancerList.add(Freelancer(R.drawable.name, "Daniel Celo", "Tukang besi", "1.6 Km", "2"))
+        freelancerList.add(Freelancer(R.drawable.name, "Nur Ikhsan", "Tukang granit", "1.7 Km", "5"))
+        freelancerList.add(Freelancer(R.drawable.name, "Fahrurrozi", "Tukang listrik", "2 Km", "5"))
 
         adapter = FreelancerAdapter(freelancerList)
         recyclerView.adapter = adapter

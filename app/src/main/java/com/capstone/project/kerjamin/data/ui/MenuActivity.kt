@@ -19,6 +19,7 @@ import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
 import com.capstone.project.kerjamin.data.database.response.ResponseLogin
 import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
+import com.capstone.project.kerjamin.data.database.viewmodel.MainViewModel
 import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
 import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.databinding.ActivityMenuBinding
@@ -54,20 +55,25 @@ class MenuActivity : AppCompatActivity() {
         setupViewModel()
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     private fun setupViewModel(){
         val preferences = ClientPreferences.getInstanceClient(dataStore)
-        viewModel = ViewModelProvider(
-            this, ViewModelFactory(preferences)
-        )[ClientViewModel::class.java]
+        viewModel =ViewModelProvider(this, ViewModelFactory(preferences))[ClientViewModel::class.java]
 
-        viewModel.tokenGet().observe(this) { client ->
-            if (!client.isLogin) {
+        viewModel.getClient().observe(this){client ->
+            if(!client.isLogin){
                 val intentClient = Intent(this@MenuActivity, LoginActivity::class.java)
                 intentClient.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intentClient)
             }
-            viewModel.setToken(token = client.token)
+            viewModel.setToken(tokenAuthentication = client.token)
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
         }
     }
 }

@@ -8,6 +8,9 @@ class ViewModelFactory (private val preferences: ClientPreferences) : ViewModelP
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
+                MainViewModel(preferences) as T
+            }
             modelClass.isAssignableFrom(ClientViewModel::class.java) -> {
                 ClientViewModel(preferences) as T
             }
