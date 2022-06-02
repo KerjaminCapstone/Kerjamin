@@ -26,10 +26,4 @@ class MainViewModel (private val preferences: ClientPreferences) : ViewModel(){
         return preferences.getToken().asLiveData()
 
     }
-
-    fun tokenClear() {
-        viewModelScope.launch {
-            preferences.logOut()
-        }
-    }
 }

@@ -20,7 +20,7 @@
     <string name="rating">Rating</string>
     <string name="specialist">Bidang</string>
     <string name="budget">Perkiraan Harga</string>
-    <string name="adress">Alamat</string>
+    <string name="adress">Alamat Lengkap</string>
     <string name="username">Username</string>
     <string name="jenis_kelamin">Jenis Kelamin</string>
     <string-array name="gender">
@@ -80,7 +80,7 @@
     <string name="phone_help">Telepon</string>
 
     <!--    List Freelancer-->
-    <string name="add_loc">Tambahkan lokasi anda</string>
+    <string name="add_loc">Tambahkan koordinat alamat</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="todo">TODO</string>
 
@@ -146,6 +146,7 @@
     <string name="empty_address">Masukan alamat lengkap</string>
     <string name="empty_gender">Masukan jenis kelamin anda</string>
     <string name="empty_phone">Masukan nomor whatsapp</string>
+    <string name="empty_coordinate">Masukan titik koordinat</string>
     <string name="empty_borndate">Masukan tanggal lahir anda</string>
     <string name="success_register">Selamat! Akun anda berhasil dibuat</string>
 
@@ -175,4 +176,8 @@
     <string name="start_cost3">Rp 400.000</string>
     <string name="final_cost3">Rp 400.000</string>
     <string name="total3">Rp 408.000</string>
+    <string name="data_error">404 Error</string>
+    <string name="normal">Normal</string>
+    <string name="terrain">Terrain</string>
+    <string name="satellite">Satellite</string>
 </resources>

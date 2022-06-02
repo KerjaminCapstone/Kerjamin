@@ -1,11 +1,19 @@
 package com.capstone.project.kerjamin.data.ui.list
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Geocoder
+import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.project.kerjamin.R
@@ -14,6 +22,10 @@ import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
 import com.capstone.project.kerjamin.data.ui.maps.MapsActivity
 import com.capstone.project.kerjamin.databinding.ActivityFreelancerArsitecBinding
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.LatLng
+import kotlin.random.Random
 
 class FreelancerArsitecActivity : AppCompatActivity() {
 
@@ -31,11 +43,6 @@ class FreelancerArsitecActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Arsitek Bangunan"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        binding.btnLoc.setOnClickListener {
-            val view = Intent(this@FreelancerArsitecActivity, DetailFreelancerActivity::class.java)
-            startActivity(view)
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

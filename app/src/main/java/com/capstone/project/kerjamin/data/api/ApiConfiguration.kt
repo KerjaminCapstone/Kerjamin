@@ -21,7 +21,7 @@ class ApiConfiguration {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://kerjamin-api-v1.herokuapp.com/api/")
+            .baseUrl("https://kerjamin-api-ko6izzknpq-et.a.run.app/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
