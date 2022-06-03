@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_user"
+            android:id="@+id/img_freelancer"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_marginTop="32dp"
@@ -31,7 +31,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_user" />
+        app:layout_constraintTop_toBottomOf="@+id/img_freelancer" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/layout_specialist"
@@ -132,6 +132,39 @@
             android:text="@string/adress2" />
     </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layout_distance"
+            style="@style/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/grey_100"
+            android:orientation="vertical"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_adress">
+
+            <TextView
+                android:id="@+id/distance"
+                style="@style/TextContent.Small.Grey"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/distant_free"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                style="@style/TextContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/distant_free2" />
+        </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         style="@style/cardView"
         android:id="@+id/layout_gender"
@@ -145,7 +178,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_adress">
+        app:layout_constraintTop_toBottomOf="@+id/layout_distance">
 
         <TextView
             android:id="@+id/gender"

@@ -1,4 +1,4 @@
-package com.capstone.project.kerjamin.data.database.adapter
+package com.capstone.project.kerjamin.data.ui.list.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.data.ui.list.Freelancer
+import com.capstone.project.kerjamin.data.ui.list.model.Freelancer
 
-class FreelancerAdapter(private val freelancerList:ArrayList<Freelancer>) : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewHolder>() {
+class MainAdapter(private val freelancerList:ArrayList<Freelancer>) : RecyclerView.Adapter<MainAdapter.FreelancerViewHolder>() {
+
+    var onItemClick : ((Freelancer) -> Unit)? = null
 
     class FreelancerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageItem : ImageView = itemView.findViewById(R.id.img_item)
@@ -31,6 +33,10 @@ class FreelancerAdapter(private val freelancerList:ArrayList<Freelancer>) : Recy
         holder.bidangItem.text = freelancer.bidang
         holder.distanceItem.text = freelancer.distance
         holder.ratingItem.text = freelancer.rating
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(freelancer)
+        }
     }
 
     override fun getItemCount(): Int {

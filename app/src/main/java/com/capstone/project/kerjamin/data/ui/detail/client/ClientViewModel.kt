@@ -1,12 +1,10 @@
-package com.capstone.project.kerjamin.data.database.viewmodel
+package com.capstone.project.kerjamin.data.ui.detail.client
 
 import android.util.Log
 import androidx.lifecycle.*
 import com.capstone.project.kerjamin.data.api.ApiConfiguration
-import com.capstone.project.kerjamin.data.database.model.ClientModel
-import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
-import com.capstone.project.kerjamin.data.database.response.ClientResponse
-import com.capstone.project.kerjamin.data.database.response.ResponseLogin
+import com.capstone.project.kerjamin.data.ui.auth.ClientPreferences
+import com.capstone.project.kerjamin.data.ui.auth.response.ResponseLogin
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

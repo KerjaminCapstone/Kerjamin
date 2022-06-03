@@ -1,4 +1,4 @@
-package com.capstone.project.kerjamin.data.database.model
+package com.capstone.project.kerjamin.data.ui.detail.client
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

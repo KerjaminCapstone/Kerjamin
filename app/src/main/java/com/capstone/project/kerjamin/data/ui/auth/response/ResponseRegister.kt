@@ -1,4 +1,4 @@
-package com.capstone.project.kerjamin.data.database.response
+package com.capstone.project.kerjamin.data.ui.auth.response
 
 import com.google.gson.annotations.SerializedName
 

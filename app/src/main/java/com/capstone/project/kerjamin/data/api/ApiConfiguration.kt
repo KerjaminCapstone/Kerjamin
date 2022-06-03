@@ -1,13 +1,5 @@
 package com.capstone.project.kerjamin.data.api
 
-import android.content.Context
-import androidx.viewbinding.BuildConfig
-import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
-import com.google.android.gms.common.api.Api
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

@@ -80,48 +80,9 @@
 
     </style>
 
-    <style name="ButtonSecondary">
-
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/montserrat_bold</item>
-        <item name="android:background">@drawable/button</item>
-        <item name="android:layout_marginLeft">20dp</item>
-        <item name="android:layout_marginRight">20dp</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/white</item>
-
-    </style>
-
-    <style name="Button">
-
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/montserrat_bold</item>
-        <item name="android:background">@drawable/button</item>
-        <item name="android:layout_marginLeft">20dp</item>
-        <item name="android:layout_marginRight">20dp</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/white</item>
-
-    </style>
-
-    <style name="card">
-        <item name="cardBackgroundColor">@color/blue_darker</item>
-    </style>
-
-    <style name="tab">
-        <item name="tabBackground">@color/white</item>
-    </style>
-
     <style name="cardView">
         <item name="android:strokeColor">@color/grey_100</item>
         <item name="android:radius">10dp</item>
-    </style>
-
-    <style name="frame">
-        <item name="android:background">@color/grey_100</item>
-        <item name="strokeColor">@color/white</item>
     </style>
 
 </resources>

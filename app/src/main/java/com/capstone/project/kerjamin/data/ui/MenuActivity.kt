@@ -1,6 +1,5 @@
 package com.capstone.project.kerjamin.data.ui
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -16,11 +15,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
-import com.capstone.project.kerjamin.data.database.response.ResponseLogin
-import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
-import com.capstone.project.kerjamin.data.database.viewmodel.MainViewModel
-import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
+import com.capstone.project.kerjamin.data.ui.auth.ClientPreferences
+import com.capstone.project.kerjamin.data.ui.auth.response.ResponseLogin
+import com.capstone.project.kerjamin.data.ui.detail.client.ClientViewModel
+import com.capstone.project.kerjamin.data.database.ViewModelFactory
 import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.databinding.ActivityMenuBinding
 

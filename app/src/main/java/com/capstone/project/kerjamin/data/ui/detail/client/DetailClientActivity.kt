@@ -9,11 +9,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
-import com.capstone.project.kerjamin.data.database.response.ResponseLogin
-import com.capstone.project.kerjamin.data.database.viewmodel.ClientViewModel
-import com.capstone.project.kerjamin.data.database.viewmodel.MainViewModel
-import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
+import com.capstone.project.kerjamin.data.ui.auth.ClientPreferences
+import com.capstone.project.kerjamin.data.database.ViewModelFactory
 import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.databinding.ActivityDetailClientBinding
 

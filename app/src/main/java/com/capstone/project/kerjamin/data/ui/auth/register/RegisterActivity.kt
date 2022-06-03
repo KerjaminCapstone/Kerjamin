@@ -17,15 +17,12 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.api.ApiConfiguration
-import com.capstone.project.kerjamin.data.database.response.ResponseRegister
+import com.capstone.project.kerjamin.data.ui.auth.response.ResponseRegister
 import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.databinding.ActivityRegisterBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var location : Location? = null
+    private var location: Location? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -132,8 +129,14 @@ class RegisterActivity : AppCompatActivity() {
         val accountEmail = binding.edtEmail.text.toString().trim()
         val accountPassword = binding.edtPassword.text.toString().trim()
         val accountRole = "CL"
-        val latitude = location?.latitude.toString().toRequestBody("text/plain".toMediaType())
-        val longitude = location?.longitude.toString().toRequestBody("text/plain".toMediaType())
+
+        var latitude: Float? = null
+        var longitude: Float? = null
+
+        if (location != null) {
+            latitude = location?.latitude.toString().toFloat()
+            longitude = location?.longitude.toString().toFloat()
+        }
 
 
 

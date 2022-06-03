@@ -29,9 +29,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kerjamin">
         <activity
-            android:name=".data.ui.HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".data.ui.detail.job.DetailJobActivity"
             android:exported="false" />
         <activity

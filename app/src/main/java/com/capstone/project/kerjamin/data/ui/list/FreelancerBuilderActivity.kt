@@ -1,17 +1,33 @@
 package com.capstone.project.kerjamin.data.ui.list
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
+import com.capstone.project.kerjamin.data.ui.list.adapter.FreelancerAdapter
+import com.capstone.project.kerjamin.data.ui.auth.ClientPreferences
+import com.capstone.project.kerjamin.data.ui.list.viewmodel.FreelancerViewModel
+import com.capstone.project.kerjamin.data.database.ViewModelFactory
+import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
+import com.capstone.project.kerjamin.data.ui.maps.MapsActivity
 import com.capstone.project.kerjamin.databinding.ActivityFreelancerBuilderBinding
 
 class FreelancerBuilderActivity : AppCompatActivity() {
 
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
     private lateinit var binding: ActivityFreelancerBuilderBinding
+    private lateinit var viewModel: FreelancerViewModel
+    private lateinit var adapter: FreelancerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +36,16 @@ class FreelancerBuilderActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Tukang Bangunan"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val job_code = intent.getStringExtra(JOB_CODE)
+        val sort_by = intent.getStringExtra(SORT_BY)
+
+        val bundle = Bundle()
+        bundle.putString(JOB_CODE, job_code)
+        bundle.putString(SORT_BY, sort_by)
+
+        initRecyclerView()
+        listFreelancer()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -31,7 +57,7 @@ class FreelancerBuilderActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.maps -> {
-                val mapIntent = Intent(this, DetailFreelancerActivity::class.java)
+                val mapIntent = Intent(this, MapsActivity::class.java)
                 startActivity(mapIntent)
             }
         }
@@ -46,5 +72,52 @@ class FreelancerBuilderActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         finish()
+    }
+
+    private fun initRecyclerView(){
+        binding.rvFreelancerBuilder.layoutManager = LinearLayoutManager(this)
+        adapter = FreelancerAdapter()
+        binding.rvFreelancerBuilder.adapter = adapter
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun listFreelancer(){
+        val preferences = ClientPreferences.getInstanceClient(dataStore)
+        viewModel = ViewModelProvider(
+            this, ViewModelFactory(preferences)
+        )[FreelancerViewModel::class.java]
+
+        viewModel.getClient().observe(this){client ->
+            if(!client.isLogin){
+                val intentClient = Intent(this@FreelancerBuilderActivity, LoginActivity::class.java)
+                intentClient.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intentClient)
+            }
+            showLoading(true)
+            viewModel.setFreelancerList(tokenAuthentication = client.token)
+        }
+
+        viewModel.getFreelancer().observe(this){
+            if (it!=null){
+                adapter.setFreelancer(it)
+                adapter.notifyDataSetChanged()
+                showLoading(false)
+            }else{
+                showLoading(false)
+            }
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    companion object{
+        const val JOB_CODE = "TB"
+        const val SORT_BY = "1"
     }
 }

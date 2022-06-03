@@ -1,38 +1,25 @@
 package com.capstone.project.kerjamin.data.ui.list
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.location.Geocoder
-import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.data.database.adapter.FreelancerAdapter
-import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
 import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
+import com.capstone.project.kerjamin.data.ui.list.adapter.MainAdapter
+import com.capstone.project.kerjamin.data.ui.list.model.Freelancer
 import com.capstone.project.kerjamin.data.ui.maps.MapsActivity
 import com.capstone.project.kerjamin.databinding.ActivityFreelancerArsitecBinding
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.model.LatLng
-import kotlin.random.Random
 
 class FreelancerArsitecActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFreelancerArsitecBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var freelancerList : ArrayList<Freelancer>
-    private lateinit var adapter : FreelancerAdapter
+    private lateinit var adapter : MainAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,8 +72,13 @@ class FreelancerArsitecActivity : AppCompatActivity() {
         freelancerList.add(Freelancer(R.drawable.name, "Nur Ikhsan", "Tukang granit", "1.7 Km", "5"))
         freelancerList.add(Freelancer(R.drawable.name, "Fahrurrozi", "Tukang listrik", "2 Km", "5"))
 
-        adapter = FreelancerAdapter(freelancerList)
+        adapter = MainAdapter(freelancerList)
         recyclerView.adapter = adapter
 
+        adapter.onItemClick = {
+            val intent = Intent(this, DetailFreelancerActivity::class.java)
+            intent.putExtra("freelancer", it)
+            startActivity(intent)
+        }
     }
 }

@@ -11,6 +11,6 @@ data class RegisterModel(
     val email: String,
     val password: String,
     val role: String,
-    val latitude: RequestBody,
-    val longitude: RequestBody
+    val latitude: Float?,
+    val longitude: Float?
 )

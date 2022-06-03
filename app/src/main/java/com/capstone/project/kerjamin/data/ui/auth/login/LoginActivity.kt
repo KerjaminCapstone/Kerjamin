@@ -15,10 +15,10 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.api.ApiConfiguration
-import com.capstone.project.kerjamin.data.database.preference.ClientPreferences
-import com.capstone.project.kerjamin.data.database.response.ResponseLogin
-import com.capstone.project.kerjamin.data.database.viewmodel.MainViewModel
-import com.capstone.project.kerjamin.data.database.viewmodel.ViewModelFactory
+import com.capstone.project.kerjamin.data.ui.auth.ClientPreferences
+import com.capstone.project.kerjamin.data.ui.auth.response.ResponseLogin
+import com.capstone.project.kerjamin.data.ui.auth.MainViewModel
+import com.capstone.project.kerjamin.data.database.ViewModelFactory
 import com.capstone.project.kerjamin.data.ui.MenuActivity
 import com.capstone.project.kerjamin.data.ui.auth.register.RegisterActivity
 import com.capstone.project.kerjamin.databinding.ActivityLoginBinding
@@ -118,12 +118,12 @@ class LoginActivity : AppCompatActivity() {
                         showLoading(false)
                         val responseBody = response.body()
                         if (response.isSuccessful && responseBody != null) {
-//                            val token = response.body()?.token.toString()
-//                            viewModel.tokenSave(token)
 
-                            viewModel.tokenSave(ResponseLogin(false,
+                            viewModel.tokenSave(
+                                ResponseLogin(false,
                                 login.token,
-                                true))
+                                true)
+                            )
 
                             Toast.makeText(applicationContext,
                                 getString((R.string.success_login)),
@@ -148,8 +148,6 @@ class LoginActivity : AppCompatActivity() {
                     override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
                         Log.d("failure: ", t.message.toString())
                     }
-
-
                 })
         }
     }
