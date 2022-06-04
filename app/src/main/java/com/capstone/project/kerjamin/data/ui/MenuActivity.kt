@@ -27,7 +27,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
     private lateinit var viewModel : ClientViewModel
     private lateinit var login : ResponseLogin
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokenClient")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

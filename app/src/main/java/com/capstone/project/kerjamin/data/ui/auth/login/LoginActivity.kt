@@ -28,7 +28,7 @@ import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokenClient")
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModel : MainViewModel

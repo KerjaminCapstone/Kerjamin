@@ -24,10 +24,10 @@ import com.capstone.project.kerjamin.databinding.ActivityFreelancerBuilderBindin
 
 class FreelancerBuilderActivity : AppCompatActivity() {
 
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokenClient")
     private lateinit var binding: ActivityFreelancerBuilderBinding
     private lateinit var viewModel: FreelancerViewModel
-    private lateinit var adapter: FreelancerAdapter
+    private lateinit var adapterBuilder: FreelancerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,13 +36,6 @@ class FreelancerBuilderActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Tukang Bangunan"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val job_code = intent.getStringExtra(JOB_CODE)
-        val sort_by = intent.getStringExtra(SORT_BY)
-
-        val bundle = Bundle()
-        bundle.putString(JOB_CODE, job_code)
-        bundle.putString(SORT_BY, sort_by)
 
         initRecyclerView()
         listFreelancer()
@@ -76,8 +69,8 @@ class FreelancerBuilderActivity : AppCompatActivity() {
 
     private fun initRecyclerView(){
         binding.rvFreelancerBuilder.layoutManager = LinearLayoutManager(this)
-        adapter = FreelancerAdapter()
-        binding.rvFreelancerBuilder.adapter = adapter
+        adapterBuilder = FreelancerAdapter()
+        binding.rvFreelancerBuilder.adapter = adapterBuilder
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -99,8 +92,8 @@ class FreelancerBuilderActivity : AppCompatActivity() {
 
         viewModel.getFreelancer().observe(this){
             if (it!=null){
-                adapter.setFreelancer(it)
-                adapter.notifyDataSetChanged()
+                adapterBuilder.setFreelancer(it)
+                adapterBuilder.notifyDataSetChanged()
                 showLoading(false)
             }else{
                 showLoading(false)
@@ -114,10 +107,5 @@ class FreelancerBuilderActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
-    }
-
-    companion object{
-        const val JOB_CODE = "TB"
-        const val SORT_BY = "1"
     }
 }

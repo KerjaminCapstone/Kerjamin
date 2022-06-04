@@ -34,10 +34,10 @@ class FreelancerAdapter : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewH
     }
 
     inner class FreelancerViewHolder(private val binding: ItemRowFreelanceBinding) :RecyclerView.ViewHolder(binding.root) {
-        fun freelancerBind(data : FreelancerModel){
+        fun freelancerBind(dataFreelancer : FreelancerModel){
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailFreelancerActivity::class.java)
-                intent.putExtra("dataFreelancer", data)
+                intent.putExtra("dataFreelancer", dataFreelancer)
 
                 val optionsCompat : ActivityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
                     itemView.context as Activity,
@@ -53,10 +53,10 @@ class FreelancerAdapter : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewH
             }
 
             binding.apply {
-                usernameItem.text = data.name
-                specialistItem.text = data.job_child_name
-                distantItem.text = data.distance.toString()
-                ratingItem.text = data.rating
+                usernameItem.text = dataFreelancer.name
+                specialistItem.text = dataFreelancer.job_child_name
+                distantItem.text = dataFreelancer.distance.toString()
+                ratingItem.text = dataFreelancer.rating
             }
         }
     }

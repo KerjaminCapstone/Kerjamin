@@ -21,7 +21,7 @@ interface ApiClient {
     fun getClient(@Header("Content-type") header: String, @Header("Authorization") token: String): Call<ClientResponse>
 
     @GET("client/search/freelance/TB/1")
-    fun getFreelancer(
+    fun getFreelancerBuilder(
         @Header("Content-type") header: String,
         @Header("Authorization") token: String,
     ): Call<FreelancerResponse>

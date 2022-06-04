@@ -16,7 +16,7 @@ import com.capstone.project.kerjamin.databinding.ActivityDetailClientBinding
 
 class DetailClientActivity : AppCompatActivity() {
 
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "token")
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "tokenClient")
 
     private lateinit var binding: ActivityDetailClientBinding
     private lateinit var viewModel : ClientViewModel

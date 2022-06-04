@@ -20,7 +20,7 @@ class FreelancerViewModel (private val  preferences : ClientPreferences) : ViewM
 
     fun setFreelancerList (tokenAuthentication : String){
         Log.d(this@FreelancerViewModel::class.java.simpleName, tokenAuthentication)
-        ApiConfiguration().getApiClient().getFreelancer("application/json", token = "Bearer $tokenAuthentication")
+        ApiConfiguration().getApiClient().getFreelancerBuilder("application/json", token = "Bearer $tokenAuthentication")
             .enqueue(object : Callback<FreelancerResponse>{
                 override fun onResponse(
                     call: Call<FreelancerResponse>,
