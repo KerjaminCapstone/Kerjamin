@@ -3,6 +3,7 @@ package com.capstone.project.kerjamin.data.ui.problem
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.capstone.project.kerjamin.data.ui.list.adapter.MainAdapter
 import com.capstone.project.kerjamin.data.ui.order.DetailOrderActivity
 import com.capstone.project.kerjamin.databinding.ActivityProblemBinding
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.ui.order.DetailOrder3Activity">
+    tools:context=".data.ui.order.DetailOrderFinishActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -114,25 +114,34 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingStart="0dp"
-                android:paddingEnd="220dp"
+                android:paddingEnd="150dp"
                 android:text="@string/status"
                 android:textStyle="bold" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:layout_gravity="center">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/span1"
+                style="@style/cardView"
+                android:layout_width="180dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/grey_100"
+                android:backgroundTint="@color/green"
+                android:orientation="horizontal"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_gender">
 
                 <TextView
                     android:id="@+id/tv_status"
-                    style="@style/TextContent.Small.Grey"
+                    style="@style/TextContent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
                     android:text="@string/finish"
-                    android:lineSpacingMultiplier="1"/>
-            </FrameLayout>
+                    android:textColor="@color/white"/>
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
         <TextView

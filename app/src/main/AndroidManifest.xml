@@ -29,6 +29,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kerjamin">
         <activity
+            android:name=".data.ui.order.DetailOrderCancelActivity"
+            android:exported="false"
+            android:parentActivityName=".data.ui.MenuActivity" />
+        <activity
             android:name=".data.ui.detail.job.DetailJobActivity"
             android:exported="false" />
         <activity
@@ -36,11 +40,11 @@
             android:exported="false"
             android:parentActivityName=".data.ui.order.DetailOrderActivity" />
         <activity
-            android:name=".data.ui.order.DetailOrder2Activity"
+            android:name=".data.ui.order.DetailOrderProcessActivity"
             android:exported="false"
             android:parentActivityName=".data.ui.payment.PaymentActivity" />
         <activity
-            android:name=".data.ui.order.DetailOrder3Activity"
+            android:name=".data.ui.order.DetailOrderFinishActivity"
             android:exported="false"
             android:parentActivityName=".data.ui.MenuActivity" />
         <activity
@@ -69,7 +73,7 @@
         <activity
             android:name=".data.ui.review.ReviewActivity"
             android:exported="false"
-            android:parentActivityName=".data.ui.order.DetailOrder2Activity" />
+            android:parentActivityName=".data.ui.order.DetailOrderProcessActivity" />
         <activity
             android:name=".data.ui.order.DetailOrderActivity"
             android:exported="false"

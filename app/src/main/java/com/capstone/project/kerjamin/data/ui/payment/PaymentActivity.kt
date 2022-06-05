@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import com.capstone.project.kerjamin.R
-import com.capstone.project.kerjamin.data.ui.order.DetailOrder2Activity
+import com.capstone.project.kerjamin.data.ui.order.DetailOrderProcessActivity
 import com.capstone.project.kerjamin.databinding.ActivityPaymentBinding
 
 class PaymentActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -23,7 +21,7 @@ class PaymentActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.btnPay.setOnClickListener {
-            val view = Intent(this@PaymentActivity, DetailOrder2Activity::class.java)
+            val view = Intent(this@PaymentActivity, DetailOrderProcessActivity::class.java)
             startActivity(view)
         }
     }

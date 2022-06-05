@@ -153,4 +153,8 @@
     <string name="normal">Normal</string>
     <string name="terrain">Terrain</string>
     <string name="satellite">Satellite</string>
+    <string name="info_cancel">Apa anda yakin ingin membatalkan pesanan?</string>
+    <string name="Yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="order_cancel">Pesanan dibatalkan</string>
 </resources>

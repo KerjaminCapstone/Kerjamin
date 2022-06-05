@@ -39,19 +39,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityMapsBinding
     private lateinit var geofencingClient: GeofencingClient
 
-    private val centerLat = 37.4274745
-    private val centerLng = -122.169719
+    private val centerLat = -6.7420104
+    private val centerLng = 108.5396064
     private val geofenceRadius = 400.0
 
-    private val geofencePendingIntent: PendingIntent by lazy {
-        val intent = Intent(this, GeofenceBroadcast::class.java)
-        intent.action = GeofenceBroadcast.ACTION_GEOFENCE_EVENT
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_MUTABLE)
-        } else {
-            PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-        }
-    }
+//    private val geofencePendingIntent: PendingIntent by lazy {
+//        val intent = Intent(this, GeofenceBroadcast::class.java)
+//        intent.action = GeofenceBroadcast.ACTION_GEOFENCE_EVENT
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+//            PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_MUTABLE)
+//        } else {
+//            PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,13 +82,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.uiSettings.isMapToolbarEnabled = true
 
         // Add a marker in Sydney and move the camera
-        val stanford = LatLng(centerLat, centerLng)
-        mMap.addMarker(MarkerOptions().position(stanford).title("Stanford University"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stanford, 15f))
+        val warkop58 = LatLng(centerLat, centerLng)
+        mMap.addMarker(MarkerOptions().position(warkop58).title("Your Location"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(warkop58, 15f))
 
         mMap.addCircle(
             CircleOptions()
-                .center(stanford)
+                .center(warkop58)
                 .radius(geofenceRadius)
                 .fillColor(0x22FF0000)
                 .strokeColor(Color.RED)
@@ -153,18 +153,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .addGeofence(geofence)
             .build()
 
-        geofencingClient.removeGeofences(geofencePendingIntent).run {
-            addOnCompleteListener {
-                geofencingClient.addGeofences(geofencingRequest, geofencePendingIntent).run {
-                    addOnSuccessListener {
-                        showToast("Geofencing added")
-                    }
-                    addOnFailureListener {
-                        showToast("Geofencing not added : ${it.message}")
-                    }
-                }
-            }
-        }
+//        geofencingClient.removeGeofences(geofencePendingIntent).run {
+//            addOnCompleteListener {
+//                geofencingClient.addGeofences(geofencingRequest, geofencePendingIntent).run {
+//                    addOnSuccessListener {
+//                        showToast("Geofencing added")
+//                    }
+//                    addOnFailureListener {
+//                        showToast("Geofencing not added : ${it.message}")
+//                    }
+//                }
+//            }
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

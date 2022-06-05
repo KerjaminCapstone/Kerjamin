@@ -35,7 +35,7 @@ class DetailFreelancerActivity : AppCompatActivity() {
         if (freelancer!=null){
             val imgFreelancer : ImageView = binding.imgFreelancer
             val username : TextView = binding.tvUsername
-            val skill : TextView = binding.tvSpecialist
+            val skill : TextView = binding.tvSkill
             val address : TextView = binding.tvAdress
             val distance : TextView = binding.tvDistance
             val gender : TextView = binding.tvGender

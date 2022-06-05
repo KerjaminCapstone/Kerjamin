@@ -28,43 +28,44 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/name2"
+        android:textSize="25sp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_freelancer" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/layout_specialist"
-        android:layout_width="match_parent"
-        style="@style/cardView"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/grey_100"
-        android:orientation="vertical"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username">
-
-        <TextView
-            android:id="@+id/specialist"
-            style="@style/TextContent.Small.Grey"
-            android:textSize="11sp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layout_specialist"
+            style="@style/cardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/specialist"/>
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/grey_100"
+            android:orientation="vertical"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username">
 
-        <TextView
-            android:id="@+id/tv_specialist"
-            style="@style/TextContent"
-            android:layout_marginStart="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="18dp"
-            android:text="@string/specialist2"/>
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/specialist"
+                style="@style/TextContent.Small.Grey"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/specialist"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_specialist"
+                style="@style/TextContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/specialist2" />
+        </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         style="@style/cardView"

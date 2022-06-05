@@ -3,7 +3,7 @@ package com.capstone.project.kerjamin.data.ui.review
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.capstone.project.kerjamin.data.ui.order.DetailOrder3Activity
+import com.capstone.project.kerjamin.data.ui.order.DetailOrderFinishActivity
 import com.capstone.project.kerjamin.databinding.ActivityReviewBinding
 
 class ReviewActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class ReviewActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.btnSend.setOnClickListener {
-            val view = Intent(this@ReviewActivity, DetailOrder3Activity::class.java)
+            val view = Intent(this@ReviewActivity, DetailOrderFinishActivity::class.java)
             startActivity(view)
         }
     }

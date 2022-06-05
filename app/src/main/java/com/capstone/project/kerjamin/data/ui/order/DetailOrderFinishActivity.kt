@@ -7,18 +7,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.capstone.project.kerjamin.data.ui.detail.job.DetailJobActivity
-import com.capstone.project.kerjamin.databinding.ActivityDetailOrder3Binding
+import com.capstone.project.kerjamin.databinding.ActivityDetailOrderFinishBinding
 
-class DetailOrder3Activity : AppCompatActivity() {
+class DetailOrderFinishActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityDetailOrder3Binding
+    private lateinit var binding : ActivityDetailOrderFinishBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailOrder3Binding.inflate(layoutInflater)
+        binding = ActivityDetailOrderFinishBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Detail Pesanan"
+        supportActionBar?.title = "Riwayat Pesanan"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val num = "+6289513169767"
@@ -31,13 +31,13 @@ class DetailOrder3Activity : AppCompatActivity() {
                 intent.data = Uri.parse("https://api.whatsapp.com/send?phone=$num&text=$text")
                 startActivity(intent)
             } else {
-                Toast.makeText(this@DetailOrder3Activity, "Whatsapp is not installed!", Toast.LENGTH_SHORT)
+                Toast.makeText(this@DetailOrderFinishActivity, "Whatsapp is not installed!", Toast.LENGTH_SHORT)
                     .show()
             }
         }
 
         binding.btnList.setOnClickListener {
-            val view = Intent(this@DetailOrder3Activity, DetailJobActivity::class.java)
+            val view = Intent(this@DetailOrderFinishActivity, DetailJobActivity::class.java)
             startActivity(view)
         }
     }

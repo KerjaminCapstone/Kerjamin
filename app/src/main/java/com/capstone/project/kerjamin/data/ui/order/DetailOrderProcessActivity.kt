@@ -10,24 +10,23 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.ui.review.ReviewActivity
-import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
 import com.capstone.project.kerjamin.data.ui.detail.job.DetailJobActivity
-import com.capstone.project.kerjamin.databinding.ActivityDetailOrder2Binding
+import com.capstone.project.kerjamin.databinding.ActivityDetailOrderProcessBinding
 
-class DetailOrder2Activity : AppCompatActivity() {
+class DetailOrderProcessActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityDetailOrder2Binding
+    private lateinit var binding : ActivityDetailOrderProcessBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailOrder2Binding.inflate(layoutInflater)
+        binding = ActivityDetailOrderProcessBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.title = "Detail Pesanan"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.btnConfirm.setOnClickListener {
-            val view = Intent(this@DetailOrder2Activity, ReviewActivity::class.java)
+            val view = Intent(this@DetailOrderProcessActivity, ReviewActivity::class.java)
             startActivity(view)
         }
     }
@@ -50,7 +49,7 @@ class DetailOrder2Activity : AppCompatActivity() {
                     intent.data = Uri.parse("https://api.whatsapp.com/send?phone=$num&text=$text")
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@DetailOrder2Activity, "Whatsapp is not installed!", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@DetailOrderProcessActivity, "Whatsapp is not installed!", Toast.LENGTH_SHORT)
                         .show()
                 }
             }
