@@ -33,13 +33,14 @@
         style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:drawableEnd="@drawable/ic_electrical_services"
         android:text="@string/service"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cleaner" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Button
         android:id="@+id/btn_cleaner"
@@ -53,21 +54,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_builder" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_service" />
 
     <Button
         android:id="@+id/btn_builder"
         style="@style/ButtonPrimary"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/ic_build"
         android:text="@string/builder"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_cleaner" />
 
     <Button
         android:id="@+id/btn_arsitec"
@@ -80,7 +81,7 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_service" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_builder" />
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -40,7 +40,6 @@ class HelpFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         val num = "+6283870804464"
         val text = "Hello"
 
@@ -55,6 +54,7 @@ class HelpFragment : Fragment() {
                 Toast.makeText(getActivity(),"Whatsapp is not installed!!",Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     private fun isAppInstalled(s: String): Boolean {

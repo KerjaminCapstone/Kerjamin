@@ -2,8 +2,11 @@ package com.capstone.project.kerjamin.data.ui
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
@@ -20,6 +23,7 @@ import com.capstone.project.kerjamin.data.ui.auth.response.ResponseLogin
 import com.capstone.project.kerjamin.data.ui.detail.client.ClientViewModel
 import com.capstone.project.kerjamin.data.database.ViewModelFactory
 import com.capstone.project.kerjamin.data.ui.auth.login.LoginActivity
+import com.capstone.project.kerjamin.data.ui.problem.ProblemActivity
 import com.capstone.project.kerjamin.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
@@ -44,13 +48,13 @@ class MenuActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_list_order,
-                R.id.navigation_help,
                 R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         setupViewModel()
+        whatsapStart()
     }
 
     private fun setupViewModel(){
@@ -73,5 +77,35 @@ class MenuActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+    private fun whatsapStart(){
+        binding.btnWa.setOnClickListener {
+            val num = "+6283870804464"
+            val text = "Hello"
+
+            val installed: Boolean = isAppInstalled("com.whatsapp")
+            if (installed) {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse("https://api.whatsapp.com/send?phone=$num&text=$text")
+                startActivity(intent)
+            } else {
+                Toast.makeText(this@MenuActivity, "Whatsapp is not installed!", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+    }
+
+    private fun isAppInstalled(s: String): Boolean {
+        val packageManager = packageManager
+        var is_installed: Boolean
+        try {
+            packageManager.getPackageInfo(s, PackageManager.GET_ACTIVITIES)
+            is_installed = true
+        } catch (e: PackageManager.NameNotFoundException) {
+            is_installed = false
+            e.printStackTrace()
+        }
+        return is_installed
     }
 }

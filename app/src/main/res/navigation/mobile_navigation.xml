@@ -17,11 +17,11 @@
         android:label="@string/title_order"
         tools:layout="@layout/fragment_list_order" />
 
-    <fragment
-        android:id="@+id/navigation_help"
-        android:name="com.capstone.project.kerjamin.data.ui.ui.help.HelpFragment"
-        android:label="@string/title_help"
-        tools:layout="@layout/fragment_help" />
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_help"-->
+<!--        android:name="com.capstone.project.kerjamin.data.ui.ui.help.HelpFragment"-->
+<!--        android:label="@string/title_help"-->
+<!--        tools:layout="@layout/fragment_help" />-->
 
     <fragment
         android:id="@+id/navigation_profile"
