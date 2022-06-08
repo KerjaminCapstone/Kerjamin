@@ -67,7 +67,7 @@ class MenuActivity : AppCompatActivity() {
                 intentClient.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intentClient)
             }
-            viewModel.setToken(tokenAuthentication = client.token)
+            viewModel.setToken(token = client.token)
         }
     }
 

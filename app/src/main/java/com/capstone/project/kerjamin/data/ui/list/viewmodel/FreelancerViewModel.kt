@@ -18,9 +18,56 @@ class FreelancerViewModel (private val  preferences : ClientPreferences) : ViewM
 
     val freelancerList = MutableLiveData<ArrayList<FreelancerModel>?>()
 
-    fun setFreelancerList (tokenAuthentication : String){
-        Log.d(this@FreelancerViewModel::class.java.simpleName, tokenAuthentication)
-        ApiConfiguration().getApiClient().getFreelancerBuilder("application/json", token = "Bearer $tokenAuthentication")
+    fun setFreelancerService (token : String){
+        val hardcodeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJDTC1nYXVwU1IzbSIsInJvbGVfaWRfMSI6IkNMIiwiZXhwIjoxNjg2MjI2NjUxfQ.SfC4ejGzGyU5--ttSAfGGPZq3-5lbvdG8JhS2KRqO5c"
+        Log.d(this@FreelancerViewModel::class.java.simpleName, hardcodeToken)
+        ApiConfiguration().getApiClient().getFreelancerService(header = "application/json", token =  "Bearer $hardcodeToken")
+            .enqueue(object : Callback<FreelancerResponse>{
+                override fun onResponse(
+                    call: Call<FreelancerResponse>,
+                    response: Response<FreelancerResponse>
+                ) {
+                    if (response.isSuccessful){
+                        freelancerList.postValue(response.body()?.data)
+                    } else {
+                        freelancerList.postValue(null)
+                    }
+                }
+
+                override fun onFailure(call: Call<FreelancerResponse>, t: Throwable) {
+                    freelancerList.postValue(null)
+                }
+
+            })
+    }
+
+    fun setFreelancerCleaner (token : String){
+        val hardcodeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJDTC1nYXVwU1IzbSIsInJvbGVfaWRfMSI6IkNMIiwiZXhwIjoxNjg2MjI2NjUxfQ.SfC4ejGzGyU5--ttSAfGGPZq3-5lbvdG8JhS2KRqO5c"
+        Log.d(this@FreelancerViewModel::class.java.simpleName, hardcodeToken)
+        ApiConfiguration().getApiClient().getFreelancerCleaner(header = "application/json", token =  "Bearer $hardcodeToken")
+            .enqueue(object : Callback<FreelancerResponse>{
+                override fun onResponse(
+                    call: Call<FreelancerResponse>,
+                    response: Response<FreelancerResponse>
+                ) {
+                    if (response.isSuccessful){
+                        freelancerList.postValue(response.body()?.data)
+                    } else {
+                        freelancerList.postValue(null)
+                    }
+                }
+
+                override fun onFailure(call: Call<FreelancerResponse>, t: Throwable) {
+                    freelancerList.postValue(null)
+                }
+
+            })
+    }
+
+    fun setFreelancerBuilder (token : String){
+        val hardcodeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJDTC1nYXVwU1IzbSIsInJvbGVfaWRfMSI6IkNMIiwiZXhwIjoxNjg2MjI2NjUxfQ.SfC4ejGzGyU5--ttSAfGGPZq3-5lbvdG8JhS2KRqO5c"
+        Log.d(this@FreelancerViewModel::class.java.simpleName, hardcodeToken)
+        ApiConfiguration().getApiClient().getFreelancerBuilder(header = "application/json", token =  "Bearer $hardcodeToken")
             .enqueue(object : Callback<FreelancerResponse>{
                 override fun onResponse(
                     call: Call<FreelancerResponse>,

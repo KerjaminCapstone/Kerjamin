@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
+import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.ui.list.model.FreelancerModel
 import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
 import com.capstone.project.kerjamin.databinding.ItemRowFreelanceBinding
@@ -25,7 +26,7 @@ class FreelancerAdapter : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewH
     }
 
     override fun onBindViewHolder(holder: FreelancerViewHolder, position: Int) {
-        holder.freelancerBind(listFreelancer?.get(position)!!)
+        holder.bind(listFreelancer?.get(position)!!)
     }
 
     override fun getItemCount(): Int {
@@ -34,7 +35,7 @@ class FreelancerAdapter : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewH
     }
 
     inner class FreelancerViewHolder(private val binding: ItemRowFreelanceBinding) :RecyclerView.ViewHolder(binding.root) {
-        fun freelancerBind(dataFreelancer : FreelancerModel){
+        fun bind(dataFreelancer : FreelancerModel){
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailFreelancerActivity::class.java)
                 intent.putExtra("dataFreelancer", dataFreelancer)
@@ -53,9 +54,12 @@ class FreelancerAdapter : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewH
             }
 
             binding.apply {
+                imgItem.setImageResource(R.drawable.name)
                 usernameItem.text = dataFreelancer.name
                 specialistItem.text = dataFreelancer.job_child_name
-                distantItem.text = dataFreelancer.distance.toString()
+                val number:Double = dataFreelancer.distance
+                val number2digits:Double = String.format("%.1f", number).toDouble()
+                distantItem.text = number2digits.toString() + " Km"
                 ratingItem.text = dataFreelancer.rating
             }
         }

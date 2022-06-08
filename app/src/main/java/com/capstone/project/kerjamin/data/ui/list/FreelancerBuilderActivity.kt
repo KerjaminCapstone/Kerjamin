@@ -87,7 +87,7 @@ class FreelancerBuilderActivity : AppCompatActivity() {
                 startActivity(intentClient)
             }
             showLoading(true)
-            viewModel.setFreelancerList(tokenAuthentication = client.token)
+            viewModel.setFreelancerBuilder(token = client.token)
         }
 
         viewModel.getFreelancer().observe(this){
