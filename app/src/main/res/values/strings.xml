@@ -79,6 +79,7 @@
     <!--    Detail Job-->
     <string name="status">Status</string>
     <string name="accept">Diterima freelancer</string>
+    <string name="wait">Menunggu Konfirmasi</string>
     <string name="on_going">Dalam Proses</string>
     <string name="finish">Selesai</string>
     <string name="problem">Keluhan :</string>
@@ -135,10 +136,10 @@
     <string name="jenis_kelamin1">perempuan</string>
 
     <!--    Fake Data Freelancer-->
-    <string name="name2">Dadang Sudrajat</string>
+    <string name="name2">Dadang Supriyatna</string>
     <string name="distant_free2">1 Km</string>
-    <string name="skill2">Tukang cat</string>
-    <string name="rating2">7</string>
+    <string name="skill2">Tukang cor</string>
+    <string name="rating2">5</string>
     <string name="specialist2">Tukang bangunan</string>
     <string name="adress2">Jl. Tuparev</string>
     <string name="jenis_kelamin2">Pria</string>
@@ -146,6 +147,7 @@
     <!--   Fake Detail Job-->
     <string name="tv_problem3">Tembok saya retak</string>
     <string name="tv_review3">Pekerjaannya sangat rapih, orangnya juga baik dan cekatan</string>
+    <string name="dummy">Rp 00</string>
     <string name="start_cost3">Rp 400.000</string>
     <string name="final_cost3">Rp 400.000</string>
     <string name="total3">Rp 408.000</string>

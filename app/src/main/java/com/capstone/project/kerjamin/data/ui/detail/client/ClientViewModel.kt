@@ -22,10 +22,10 @@ class ClientViewModel (private val preferences: ClientPreferences) : ViewModel()
         return dataClient
     }
 
-    fun setToken(token : String){
+    fun setToken(tokenAuthentication : String){
         val hardcodeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJDTC1nYXVwU1IzbSIsInJvbGVfaWRfMSI6IkNMIiwiZXhwIjoxNjg2MjI2NjUxfQ.SfC4ejGzGyU5--ttSAfGGPZq3-5lbvdG8JhS2KRqO5c"
-        Log.d(this@ClientViewModel::class.java.simpleName, hardcodeToken)
-        ApiConfiguration().getApiClient().getClient(header = "application/json", token = "Bearer $hardcodeToken")
+        Log.d(this@ClientViewModel::class.java.simpleName, tokenAuthentication)
+        ApiConfiguration().getApiClient().getClient(header = "application/json", token = "Bearer $tokenAuthentication")
             .enqueue(object : Callback<ClientResponse> {
                 override fun onResponse(
                     call: Call<ClientResponse>,

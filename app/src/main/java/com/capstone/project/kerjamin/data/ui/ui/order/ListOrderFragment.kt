@@ -46,8 +46,7 @@ class ListOrderFragment : Fragment() {
 
         orderList = ArrayList()
 
-        orderList.add(Order("Servis Elektronik", "Kayla Wijayanti", "14 Juni 2022", "selesai"))
-        orderList.add(Order("Servis Elektronik", "Kayla Wijayanti", "14 Juni 2022", "selesai"))
+        orderList.add(Order("Tukang Bangunan", "Dadang Supriyatna", "10 Juni 2022", "selesai"))
 
         adapter = OrderAdapter(activity, orderList)
         recyclerView.adapter = adapter

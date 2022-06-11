@@ -18,10 +18,10 @@ class FreelancerViewModel (private val  preferences : ClientPreferences) : ViewM
 
     val freelancerList = MutableLiveData<ArrayList<FreelancerModel>?>()
 
-    fun setFreelancerService (token : String){
+    fun setFreelancerService (tokenAuthentication : String){
         val hardcodeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJDTC1nYXVwU1IzbSIsInJvbGVfaWRfMSI6IkNMIiwiZXhwIjoxNjg2MjI2NjUxfQ.SfC4ejGzGyU5--ttSAfGGPZq3-5lbvdG8JhS2KRqO5c"
-        Log.d(this@FreelancerViewModel::class.java.simpleName, hardcodeToken)
-        ApiConfiguration().getApiClient().getFreelancerService(header = "application/json", token =  "Bearer $hardcodeToken")
+        Log.d(this@FreelancerViewModel::class.java.simpleName, tokenAuthentication)
+        ApiConfiguration().getApiClient().getFreelancerService(header = "application/json", token =  "Bearer $tokenAuthentication")
             .enqueue(object : Callback<FreelancerResponse>{
                 override fun onResponse(
                     call: Call<FreelancerResponse>,

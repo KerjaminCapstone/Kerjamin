@@ -121,7 +121,7 @@ class LoginActivity : AppCompatActivity() {
 
                             viewModel.tokenSave(
                                 ResponseLogin(false,
-                                login.token,
+                                responseBody.token,
                                 true)
                             )
 

@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingStart="0dp"
-                android:paddingEnd="70dp"
+                android:paddingEnd="50dp"
                 android:text="@string/date"
                 android:textStyle="bold"
                 android:drawableStart="@drawable/ic_date"/>
@@ -65,12 +65,13 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card"
                 style="@style/cardView"
-                android:layout_width="210dp"
+                android:layout_width="180dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/grey_100"
                 android:backgroundTint="@color/green"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                card_view:cardCornerRadius="10dp">
 
                 <TextView
                     android:id="@+id/order_status"

@@ -80,8 +80,7 @@
             android:parentActivityName=".data.ui.problem.ProblemActivity" />
         <activity
             android:name=".data.ui.problem.ProblemActivity"
-            android:exported="false"
-            android:parentActivityName=".data.ui.detail.freelancer.DetailFreelancerActivity" />
+            android:exported="false"/>
         <activity
             android:name=".data.ui.detail.freelancer.DetailFreelancerActivity"
             android:exported="false" />

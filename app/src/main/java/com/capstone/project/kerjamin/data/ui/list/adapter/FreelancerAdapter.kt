@@ -11,6 +11,7 @@ import com.capstone.project.kerjamin.R
 import com.capstone.project.kerjamin.data.ui.list.model.FreelancerModel
 import com.capstone.project.kerjamin.data.ui.detail.freelancer.DetailFreelancerActivity
 import com.capstone.project.kerjamin.databinding.ItemRowFreelanceBinding
+import okhttp3.internal.format
 
 class FreelancerAdapter : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewHolder>() {
 
@@ -57,10 +58,10 @@ class FreelancerAdapter : RecyclerView.Adapter<FreelancerAdapter.FreelancerViewH
                 imgItem.setImageResource(R.drawable.name)
                 usernameItem.text = dataFreelancer.name
                 specialistItem.text = dataFreelancer.job_child_name
-                val number:Double = dataFreelancer.distance
-                val number2digits:Double = String.format("%.1f", number).toDouble()
-                distantItem.text = number2digits.toString() + " Km"
-                ratingItem.text = dataFreelancer.rating
+                distantItem.text = dataFreelancer.distance
+                val rate:Double = dataFreelancer.rating
+                val rate2digits:Double = String.format("%.2f", rate).toDouble()
+                ratingItem.text = rate2digits.toString()
             }
         }
     }

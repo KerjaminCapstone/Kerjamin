@@ -24,4 +24,9 @@ class ProblemActivity : AppCompatActivity() {
             startActivity(view)
         }
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

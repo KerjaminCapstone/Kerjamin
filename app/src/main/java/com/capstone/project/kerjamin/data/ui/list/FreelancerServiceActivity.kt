@@ -88,7 +88,7 @@ class FreelancerServiceActivity : AppCompatActivity() {
                 startActivity(intentClient)
             }
             showLoading(true)
-            viewModel.setFreelancerService(token = client.token)
+            viewModel.setFreelancerService(tokenAuthentication = client.token)
         }
 
         viewModel.getFreelancer().observe(this){
