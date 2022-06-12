@@ -29,7 +29,6 @@ class DetailClientActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Informasi Akun"
 
-        setupViewModel()
         validateButton()
     }
 
