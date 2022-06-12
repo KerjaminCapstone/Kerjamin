@@ -1,2 +1,2 @@
 # Kerjamin
-This is an android application for client
+This is and mobile application for Clients, 
