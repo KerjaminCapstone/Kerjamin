@@ -22,7 +22,7 @@ class DetailOrderFinishActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val num = "+6289513169767"
-        val text = "Hello"
+        val text = "Permisi, saya melihat anda di daftar freelancer pada aplikasi Kerjamin. Apa saya bisa memesan jasa anda?"
 
         binding.btnWhatsapp.setOnClickListener {
             val installed: Boolean = isAppInstalled("com.whatsapp")

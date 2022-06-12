@@ -128,12 +128,12 @@
 
 
     <!--    Fake Data Client-->
-    <string name="email1">hanin@gmail.com</string>
-    <string name="nik1">123456789</string>
-    <string name="name1">Hanindya</string>
-    <string name="phone1">08936527644</string>
+    <string name="email1">hasanah.rini@gmail.co.id</string>
+    <string name="nik1">523481130</string>
+    <string name="name1">Rahmi Hastuti</string>
+    <string name="phone1">0895123456</string>
     <string name="adress1">Jl. Sutawinangun</string>
-    <string name="jenis_kelamin1">perempuan</string>
+    <string name="jenis_kelamin1">Perempuan</string>
 
     <!--    Fake Data Freelancer-->
     <string name="name2">Dadang Supriyatna</string>

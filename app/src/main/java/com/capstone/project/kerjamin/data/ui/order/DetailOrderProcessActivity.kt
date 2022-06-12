@@ -41,7 +41,7 @@ class DetailOrderProcessActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.whatsapp -> {
                 val num = "+6289513169767"
-                val text = "Hello"
+                val text = "Permisi, saya melihat anda di daftar freelancer pada aplikasi Kerjamin. Apa saya bisa memesan jasa anda?"
 
                 val installed: Boolean = isAppInstalled("com.whatsapp")
                 if (installed) {
